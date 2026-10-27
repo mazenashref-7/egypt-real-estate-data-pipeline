@@ -1,0 +1,152 @@
+﻿city_id,city_ar,city_en,governorate_code,governorate_id,governorate_ar,governorate_en
+1,مدينة نصر,Nasr City,CAI,1,القاهرة,Cairo
+2,مصر الجديدة,Heliopolis,CAI,1,القاهرة,Cairo
+3,المعادي,Maadi,CAI,1,القاهرة,Cairo
+4,مصر القديمة,Old Cairo,CAI,1,القاهرة,Cairo
+5,شبرا,Shubra,CAI,1,القاهرة,Cairo
+6,عين شمس,Ain Shams,CAI,1,القاهرة,Cairo
+7,حلوان,Helwan,CAI,1,القاهرة,Cairo
+8,التجمع الخامس,Fifth Settlement,CAI,1,القاهرة,Cairo
+9,القاهرة الجديدة,New Cairo,CAI,1,القاهرة,Cairo
+10,المقطم,Mokattam,CAI,1,القاهرة,Cairo
+11,المنتزه,Montaza,ALX,2,الإسكندرية,Alexandria
+12,وسط الإسكندرية,Downtown Alexandria,ALX,2,الإسكندرية,Alexandria
+13,العجمي,Agami,ALX,2,الإسكندرية,Alexandria
+14,سيدي بشر,Sidi Bishr,ALX,2,الإسكندرية,Alexandria
+15,برج العرب,Borg El Arab,ALX,2,الإسكندرية,Alexandria
+16,العامرية,Amreya,ALX,2,الإسكندرية,Alexandria
+17,الدقي,Dokki,GIZ,3,الجيزة,Giza
+18,المهندسين,Mohandessin,GIZ,3,الجيزة,Giza
+19,العجوزة,Agouza,GIZ,3,الجيزة,Giza
+20,الهرم,Haram,GIZ,3,الجيزة,Giza
+21,فيصل,Faisal,GIZ,3,الجيزة,Giza
+22,6 أكتوبر,6th of October,GIZ,3,الجيزة,Giza
+23,الشيخ زايد,Sheikh Zayed,GIZ,3,الجيزة,Giza
+24,إمبابة,Imbaba,GIZ,3,الجيزة,Giza
+25,حي الشرق,East District,PTS,4,بورسعيد,Port Said
+26,حي العرب,Arab District,PTS,4,بورسعيد,Port Said
+27,حي الضواحي,Suburbs District,PTS,4,بورسعيد,Port Said
+28,بورفؤاد,Port Fouad,PTS,4,بورسعيد,Port Said
+29,حي السويس,Suez District,SUZ,5,السويس,Suez
+30,حي الأربعين,Arbaeen District,SUZ,5,السويس,Suez
+31,عتاقة,Ataka,SUZ,5,السويس,Suez
+32,حي فيصل,Faisal District,SUZ,5,السويس,Suez
+33,المنصورة,Mansoura,DKH,6,الدقهلية,Dakahlia
+34,طلخا,Talkha,DKH,6,الدقهلية,Dakahlia
+35,ميت غمر,Mit Ghamr,DKH,6,الدقهلية,Dakahlia
+36,دكرنس,Dikirnis,DKH,6,الدقهلية,Dakahlia
+37,أجا,Aga,DKH,6,الدقهلية,Dakahlia
+38,السنبلاوين,Sinbellawin,DKH,6,الدقهلية,Dakahlia
+39,الزقازيق,Zagazig,SHR,7,الشرقية,Sharqia
+40,العاشر من رمضان,10th of Ramadan,SHR,7,الشرقية,Sharqia
+41,بلبيس,Bilbeis,SHR,7,الشرقية,Sharqia
+42,أبو حماد,Abu Hammad,SHR,7,الشرقية,Sharqia
+43,منيا القمح,Minya Al Qamh,SHR,7,الشرقية,Sharqia
+44,فاقوس,Faqous,SHR,7,الشرقية,Sharqia
+45,بنها,Benha,QLB,8,القليوبية,Qalyubia
+46,شبرا الخيمة,Shubra El Kheima,QLB,8,القليوبية,Qalyubia
+47,قليوب,Qalyub,QLB,8,القليوبية,Qalyubia
+48,القناطر الخيرية,El Qanater El Khayreya,QLB,8,القليوبية,Qalyubia
+49,طوخ,Toukh,QLB,8,القليوبية,Qalyubia
+50,كفر الشيخ,Kafr El Sheikh City,KFS,9,كفر الشيخ,Kafr El Sheikh
+51,دسوق,Desouk,KFS,9,كفر الشيخ,Kafr El Sheikh
+52,فوه,Fuwwah,KFS,9,كفر الشيخ,Kafr El Sheikh
+53,بيلا,Bella,KFS,9,كفر الشيخ,Kafr El Sheikh
+54,طنطا,Tanta,GHR,10,الغربية,Gharbia
+55,المحلة الكبرى,El Mahalla El Kubra,GHR,10,الغربية,Gharbia
+56,كفر الزيات,Kafr El Zayat,GHR,10,الغربية,Gharbia
+57,زفتى,Zefta,GHR,10,الغربية,Gharbia
+58,السنطة,Santa,GHR,10,الغربية,Gharbia
+59,شبين الكوم,Shebin El Kom,MNF,11,المنوفية,Monufia
+60,منوف,Menouf,MNF,11,المنوفية,Monufia
+61,أشمون,Ashmoun,MNF,11,المنوفية,Monufia
+62,السادات,Sadat City,MNF,11,المنوفية,Monufia
+63,تلا,Tala,MNF,11,المنوفية,Monufia
+64,دمنهور,Damanhour,BHR,12,البحيرة,Beheira
+65,كفر الدوار,Kafr El Dawar,BHR,12,البحيرة,Beheira
+66,رشيد,Rashid,BHR,12,البحيرة,Beheira
+67,إدكو,Edku,BHR,12,البحيرة,Beheira
+68,أبو المطامير,Abu El Matamir,BHR,12,البحيرة,Beheira
+69,الإسماعيلية,Ismailia City,ISM,13,الإسماعيلية,Ismailia
+70,فايد,Fayed,ISM,13,الإسماعيلية,Ismailia
+71,القنطرة شرق,Qantara East,ISM,13,الإسماعيلية,Ismailia
+72,التل الكبير,Tell El Kebir,ISM,13,الإسماعيلية,Ismailia
+73,دمياط,Damietta City,DMT,14,دمياط,Damietta
+74,دمياط الجديدة,New Damietta,DMT,14,دمياط,Damietta
+75,رأس البر,Ras El Bar,DMT,14,دمياط,Damietta
+76,فارسكور,Faraskour,DMT,14,دمياط,Damietta
+77,الفيوم,Faiyum City,FYM,15,الفيوم,Faiyum
+78,إطسا,Etsa,FYM,15,الفيوم,Faiyum
+79,طامية,Tamiya,FYM,15,الفيوم,Faiyum
+80,سنورس,Snouris,FYM,15,الفيوم,Faiyum
+81,بني سويف,Beni Suef City,BNS,16,بني سويف,Beni Suef
+82,الواسطى,El Wasta,BNS,16,بني سويف,Beni Suef
+83,ناصر,Nasser,BNS,16,بني سويف,Beni Suef
+84,إهناسيا,Ehnasia,BNS,16,بني سويف,Beni Suef
+85,المنيا,Minya City,MNY,17,المنيا,Minya
+86,ملوي,Mallawi,MNY,17,المنيا,Minya
+87,سمالوط,Samalut,MNY,17,المنيا,Minya
+88,المنيا الجديدة,New Minya,MNY,17,المنيا,Minya
+89,أبو قرقاص,Abu Qurqas,MNY,17,المنيا,Minya
+90,أسيوط,Asyut City,AST,18,أسيوط,Asyut
+91,ديروط,Dairut,AST,18,أسيوط,Asyut
+92,القوصية,El Qusiya,AST,18,أسيوط,Asyut
+93,منفلوط,Manfalut,AST,18,أسيوط,Asyut
+94,أبنوب,Abnoub,AST,18,أسيوط,Asyut
+95,سوهاج,Sohag City,SHG,19,سوهاج,Sohag
+96,أخميم,Akhmim,SHG,19,سوهاج,Sohag
+97,جرجا,Girga,SHG,19,سوهاج,Sohag
+98,طهطا,Tahta,SHG,19,سوهاج,Sohag
+99,المراغة,El Maragha,SHG,19,سوهاج,Sohag
+100,قنا,Qena City,QNA,20,قنا,Qena
+101,نجع حمادي,Nag Hammadi,QNA,20,قنا,Qena
+102,دشنا,Dishna,QNA,20,قنا,Qena
+103,قوص,Qus,QNA,20,قنا,Qena
+104,الأقصر,Luxor City,LXR,21,الأقصر,Luxor
+105,إسنا,Esna,LXR,21,الأقصر,Luxor
+106,أرمنت,Armant,LXR,21,الأقصر,Luxor
+107,الطود,El Tod,LXR,21,الأقصر,Luxor
+108,أسوان,Aswan City,ASN,22,أسوان,Aswan
+109,كوم أمبو,Kom Ombo,ASN,22,أسوان,Aswan
+110,إدفو,Edfu,ASN,22,أسوان,Aswan
+111,دراو,Daraw,ASN,22,أسوان,Aswan
+112,أبو سمبل,Abu Simbel,ASN,22,أسوان,Aswan
+113,الغردقة,Hurghada,RED,23,البحر الأحمر,Red Sea
+114,سفاجا,Safaga,RED,23,البحر الأحمر,Red Sea
+115,القصير,El Quseir,RED,23,البحر الأحمر,Red Sea
+116,مرسى علم,Marsa Alam,RED,23,البحر الأحمر,Red Sea
+117,رأس غارب,Ras Ghareb,RED,23,البحر الأحمر,Red Sea
+118,الخارجة,El Kharga,WAD,24,الوادي الجديد,New Valley
+119,الداخلة,Dakhla,WAD,24,الوادي الجديد,New Valley
+120,الفرافرة,Farafra,WAD,24,الوادي الجديد,New Valley
+121,باريس,Paris,WAD,24,الوادي الجديد,New Valley
+122,مرسى مطروح,Marsa Matruh,MTR,25,مطروح,Matruh
+123,سيوة,Siwa,MTR,25,مطروح,Matruh
+124,الحمام,El Hamam,MTR,25,مطروح,Matruh
+125,العلمين,El Alamein,MTR,25,مطروح,Matruh
+126,الضبعة,El Dabaa,MTR,25,مطروح,Matruh
+127,العريش,Arish,SIN,26,شمال سيناء,North Sinai
+128,الشيخ زويد,Sheikh Zuweid,SIN,26,شمال سيناء,North Sinai
+129,رفح,Rafah,SIN,26,شمال سيناء,North Sinai
+130,بئر العبد,Bir al-Abed,SIN,26,شمال سيناء,North Sinai
+131,شرم الشيخ,Sharm El Sheikh,SIS,27,جنوب سيناء,South Sinai
+132,دهب,Dahab,SIS,27,جنوب سيناء,South Sinai
+133,نويبع,Nuweiba,SIS,27,جنوب سيناء,South Sinai
+134,طابا,Taba,SIS,27,جنوب سيناء,South Sinai
+135,سانت كاترين,Saint Catherine,SIS,27,جنوب سيناء,South Sinai
+136,الطور,El Tor,SIS,27,جنوب سيناء,South Sinai
+137,العاصمة الإدارية الجديدة,New Administrative Capital,CAI,1,القاهرة,Cairo
+138,الشروق,El Shorouk,CAI,1,القاهرة,Cairo
+139,بدر,Badr City,CAI,1,القاهرة,Cairo
+140,مدينتي,Madinaty,CAI,1,القاهرة,Cairo
+141,مدينة الرحاب,Al Rehab,CAI,1,القاهرة,Cairo
+142,15 مايو,15 May City,CAI,1,القاهرة,Cairo
+143,سفنكس الجديدة,New Sphinx,GIZ,3,الجيزة,Giza
+144,حدائق أكتوبر,Hadayek October,GIZ,3,الجيزة,Giza
+145,برج العرب الجديدة,New Borg El Arab,ALX,2,الإسكندرية,Alexandria
+146,العبور,El Obour,QLB,8,القليوبية,Qalyubia
+147,العبور الجديدة,New Obour,QLB,8,القليوبية,Qalyubia
+148,المنصورة الجديدة,New Mansoura,DKH,6,الدقهلية,Dakahlia
+149,العلمين الجديدة,New Alamein,MTR,25,مطروح,Matruh
+150,مدينة الجلالة,Galala City,SUZ,5,السويس,Suez
+151,مدينة ناصر (غرب أسيوط),Nasser City (West Asyut),AST,18,أسيوط,Asyut
