@@ -12,8 +12,8 @@ url = URL.create(
     username=os.getenv("PG_USER", "postgres"),
     password=os.getenv("PG_PASSWORD", "postgres"),
     host=os.getenv("PG_HOST", "localhost"),
-    port=int(os.getenv("PG_PORT", "5434")),          # بورت Docker من جهازك
-    database=os.getenv("PG_DB", "realestate"),       # نفس داتابيز الستريم
+    port=int(os.getenv("PG_PORT", "5434")),        
+    database=os.getenv("PG_DB", "realestate"),       
 )
 
 engine = create_engine(url)
