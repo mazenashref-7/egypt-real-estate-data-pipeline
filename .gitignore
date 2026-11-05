@@ -2,3 +2,6 @@ listings.csv
 ivy/
 __pycache__/
 .env
+streaming_project/checkpoints/
+streaming_project/state/
+*.crc
