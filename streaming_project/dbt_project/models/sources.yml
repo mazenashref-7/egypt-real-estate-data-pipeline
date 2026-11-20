@@ -1,0 +1,13 @@
+version: 2
+sources:
+  - name: silver
+    schema: silver
+    tables:
+      - name: listing
+      - name: location
+      - name: property
+      - name: agent
+      - name: broker
+      - name: listing_amenity
+      - name: usd_egp_monthly
+      - name: egypt_inflation_monthly

@@ -1,0 +1,10 @@
+﻿name: realestate
+version: "1.0"
+profile: realestate
+model-paths: ["models"]
+macro-paths: ["macros"]
+
+models:
+  realestate:
+    gold:
+      +materialized: table

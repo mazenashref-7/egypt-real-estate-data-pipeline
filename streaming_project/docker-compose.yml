@@ -79,7 +79,16 @@ services:
       MSGS_PER_SEC: "20"
     volumes:
       - ./:/app
-
+  dbt:
+    image: ghcr.io/dbt-labs/dbt-postgres:1.8.2
+    container_name: dbt
+    working_dir: /usr/app
+    entrypoint: ["sleep", "infinity"]
+    depends_on:
+      - postgres
+    volumes:
+      - ./dbt_project:/usr/app
+      - ./dbt_project/profiles:/root/.dbt
 volumes:
   pgdata:
   kafkadata:

@@ -5,3 +5,10 @@ __pycache__/
 streaming_project/checkpoints/
 streaming_project/state/
 *.crc
+streaming_project/dbt_project/logs/
+streaming_project/dbt_project/target/
+streaming_project/dbt_project/profiles/.user.yml
+streaming_project/spark_log.txt
+streaming_project/ivy/
+streaming_project/state/
+spark_log.txt
