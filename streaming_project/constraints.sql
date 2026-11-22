@@ -12,6 +12,9 @@ ALTER TABLE silver.listing_amenity         DROP CONSTRAINT IF EXISTS listing_ame
 ALTER TABLE silver.egypt_locations         DROP CONSTRAINT IF EXISTS egypt_locations_pkey;
 ALTER TABLE silver.egypt_inflation_monthly DROP CONSTRAINT IF EXISTS egypt_inflation_monthly_pkey;
 ALTER TABLE silver.usd_egp_monthly         DROP CONSTRAINT IF EXISTS usd_egp_monthly_pkey;
+ALTER TABLE silver.listings_stream         DROP CONSTRAINT IF EXISTS listings_stream_pkey;
+ALTER TABLE silver.propertyfinder_listings  DROP CONSTRAINT IF EXISTS propertyfinder_listings_pkey;
+ALTER TABLE silver.egypt_real_estate_listings DROP CONSTRAINT IF EXISTS egypt_real_estate_listings_pkey;
 
 ALTER TABLE silver.listing                 ADD PRIMARY KEY (listing_id);
 ALTER TABLE silver.location                ADD PRIMARY KEY (location_id);
@@ -22,6 +25,9 @@ ALTER TABLE silver.listing_amenity         ADD PRIMARY KEY (listing_id, amenity)
 ALTER TABLE silver.egypt_locations         ADD PRIMARY KEY (city_id);
 ALTER TABLE silver.egypt_inflation_monthly ADD PRIMARY KEY (year_month);
 ALTER TABLE silver.usd_egp_monthly         ADD PRIMARY KEY (year_month);
+ALTER TABLE silver.listings_stream         ADD PRIMARY KEY (listing_id);
+ALTER TABLE silver.propertyfinder_listings  ADD PRIMARY KEY (listing_id);
+ALTER TABLE silver.egypt_real_estate_listings ADD PRIMARY KEY (url);
 
 ALTER TABLE silver.listing ADD CONSTRAINT fk_listing_location
     FOREIGN KEY (location_id) REFERENCES silver.location(location_id);

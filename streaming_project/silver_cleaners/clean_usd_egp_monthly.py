@@ -1,6 +1,7 @@
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import col, trim, regexp_replace, when, current_timestamp
 from pyspark.sql.types import DoubleType, StringType
+from _common import deduplicate_by_key
 
 spark = SparkSession.builder \
     .appName("06_CleanUsdEgpMonthly") \
@@ -23,8 +24,12 @@ df = df.withColumn("year_month", when(col("year_month") == "", None).otherwise(c
 cleaned_rate = regexp_replace(col("usd_egp").cast(StringType()), "[^0-9.-]", "")
 df = df.withColumn("usd_egp", when(cleaned_rate == "", None).otherwise(cleaned_rate).cast(DoubleType()))
 
-df = df.filter(col("year_month").isNotNull() & col("usd_egp").isNotNull() & (col("usd_egp") > 0))
-df = df.dropDuplicates(["year_month"]).orderBy("year_month")
+df = df.filter(
+    col("year_month").rlike(r"^\d{4}-(0[1-9]|1[0-2])$")
+    & col("usd_egp").isNotNull()
+    & (col("usd_egp") > 0)
+)
+df = deduplicate_by_key(df, ["year_month"]).orderBy("year_month")
 df = df.withColumn("_silver_processed_at", current_timestamp())
 
 final_count = df.count()

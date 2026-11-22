@@ -1,6 +1,7 @@
 from pyspark.sql import SparkSession
-from pyspark.sql.functions import col, trim, when, current_timestamp
+from pyspark.sql.functions import col, trim, regexp_replace, when, current_timestamp
 from pyspark.sql.types import DoubleType, StringType
+from _common import deduplicate_by_key
 
 spark = SparkSession.builder \
     .appName("05_CleanEgyptInflationMonthly") \
@@ -19,13 +20,15 @@ initial_count = df.count()
 
 df = df.withColumn("year_month", trim(col("year_month").cast(StringType())))
 df = df.withColumn("year_month", when(col("year_month") == "", None).otherwise(col("year_month")))
-df = df.filter(col("year_month").isNotNull()).dropDuplicates(["year_month"])
+df = df.filter(col("year_month").rlike(r"^\d{4}-(0[1-9]|1[0-2])$"))
 
 pct_cols = ["urban_annual_pct", "urban_mom_pct", "national_annual_pct", "core_annual_pct"]
 for c in pct_cols:
     if c in df.columns:
-        df = df.withColumn(c, col(c).cast(DoubleType()))
+        cleaned = regexp_replace(col(c).cast(StringType()), "[^0-9.-]", "")
+        df = df.withColumn(c, when(cleaned == "", None).otherwise(cleaned).cast(DoubleType()))
 
+df = deduplicate_by_key(df, ["year_month"])
 df = df.orderBy("year_month").withColumn("_silver_processed_at", current_timestamp())
 
 final_count = df.count()

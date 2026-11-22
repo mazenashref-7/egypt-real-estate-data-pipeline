@@ -1,6 +1,7 @@
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import col, trim, initcap, upper, when, current_timestamp
 from pyspark.sql.types import LongType, StringType
+from _common import deduplicate_by_key
 
 spark = SparkSession.builder \
     .appName("04_CleanEgyptLocations") \
@@ -16,8 +17,6 @@ db_properties = {
 
 df = spark.read.jdbc(db_url, "bronze.raw_egypt_locations", properties=db_properties)
 initial_count = df.count()
-
-df = df.dropDuplicates(["city_id"])
 
 for c in ["city_ar", "city_en", "governorate_code", "governorate_ar", "governorate_en"]:
     if c in df.columns:
@@ -36,6 +35,7 @@ for id_c in ["city_id", "governorate_id"]:
         df = df.withColumn(id_c, col(id_c).cast(LongType()))
 
 df = df.filter(col("city_id").isNotNull())
+df = deduplicate_by_key(df, ["city_id"])
 df = df.orderBy("governorate_id", "city_id").withColumn("_silver_processed_at", current_timestamp())
 
 final_count = df.count()

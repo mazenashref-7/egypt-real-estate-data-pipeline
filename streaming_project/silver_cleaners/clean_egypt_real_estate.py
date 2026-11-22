@@ -1,9 +1,10 @@
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import (
     col, trim, initcap, current_timestamp,
-    regexp_replace, when, to_date, date_format
+    regexp_replace, when, to_date, date_format, floor
 )
 from pyspark.sql.types import DoubleType, IntegerType, StringType
+from _common import deduplicate_by_key
 
 spark = SparkSession.builder \
     .appName("03_CleanEgyptRealEstate") \
@@ -25,7 +26,6 @@ for old_name in df.columns:
         df = df.withColumnRenamed(old_name, new_name)
 
 initial_count = df.count()
-df = df.dropDuplicates(["url"]) if "url" in df.columns else df.dropDuplicates()
 
 skip_initcap = ["url", "description", "available_from"]
 for field in df.schema.fields:
@@ -47,8 +47,18 @@ if "down_payment" in df.columns:
 
 for c in ["bedrooms", "bathrooms"]:
     if c in df.columns:
-        cleaned = regexp_replace(col(c).cast(StringType()), "[^0-9-]", "")
-        df = df.withColumn(c, when(cleaned == "", None).otherwise(cleaned).cast(IntegerType()))
+        cleaned = regexp_replace(col(c).cast(StringType()), "[^0-9.-]", "")
+        parsed = cleaned.cast(DoubleType())
+        df = df.withColumn(
+            c,
+            when(
+                parsed.isNotNull() & (parsed >= 0) & (parsed == floor(parsed)),
+                parsed.cast(IntegerType())
+            ).otherwise(None)
+        )
+
+if "url" in df.columns:
+    df = df.filter(col("url").isNotNull())
 
 if "available_from" in df.columns:
     df = df.withColumn("available_from_date", to_date(col("available_from"), "d MMM yyyy"))
@@ -56,6 +66,7 @@ if "available_from" in df.columns:
 
 df = df.filter(col("price").isNotNull() & (col("price") > 0))
 df = df.filter(col("size").isNull() | (col("size") > 0))
+df = deduplicate_by_key(df, ["url"])
 
 df = df.withColumn("_silver_processed_at", current_timestamp()).cache()
 final_count = df.count()

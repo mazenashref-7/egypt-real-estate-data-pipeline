@@ -1,10 +1,13 @@
 
 ============================================================
- Comprehensive Profiling for Table: bronze.raw_egypt_inflation_monthly_2025_2026 
+ Comprehensive Profiling for Table: bronze.raw_egypt_inflation_monthly_2025_2026
 ============================================================
 Total Rows: 21
 Total Columns: 5
-Duplicate Rows: 0 (0.00% of data)
+Exact Duplicate Rows: 0 (0.00% of data)
+Business Key: year_month
+Null Business Key Rows: 0
+Duplicate Business Key Rows: 0
 
 --- Schema ---
 root
@@ -15,45 +18,48 @@ root
  |-- core_annual_pct: double (nullable = true)
 
 
---- Missing Values (Nulls / NaNs) ---
+--- Missing Values (Nulls / NaNs / Blank Strings) ---
 -RECORD 0------------------
- year_month          | 0   
- urban_annual_pct    | 0   
- urban_mom_pct       | 2   
- national_annual_pct | 7   
- core_annual_pct     | 7   
+ year_month          | 0
+ urban_annual_pct    | 0
+ urban_mom_pct       | 2
+ national_annual_pct | 7
+ core_annual_pct     | 7
 
 
---- Distinct Values Count ---
+--- Approximate Distinct Values Count ---
 -RECORD 0------------------
- year_month          | 21  
- urban_annual_pct    | 16  
- urban_mom_pct       | 16  
- national_annual_pct | 11  
- core_annual_pct     | 13  
+ year_month          | 20
+ urban_annual_pct    | 16
+ urban_mom_pct       | 16
+ national_annual_pct | 11
+ core_annual_pct     | 13
 
 
---- Comprehensive Summary Statistics ---
-+-------+----------+------------------+------------------+-------------------+------------------+
-|summary|year_month|  urban_annual_pct|     urban_mom_pct|national_annual_pct|   core_annual_pct|
-+-------+----------+------------------+------------------+-------------------+------------------+
-|  count|        21|                21|                19|                 14|                14|
-|   mean|      NULL|14.204761904761906|0.9947368421052635| 12.957142857142856|12.364285714285716|
-| stddev|      NULL|2.6004761468769884|0.9143751261626867|  3.480210932094222| 1.454228393265728|
-|    min|   2025-01|              11.7|              -0.5|               10.0|              10.0|
-|    25%|      NULL|              12.5|               0.1|               10.3|              11.3|
-|    50%|      NULL|              13.9|               1.3|               12.7|              12.1|
-|    75%|      NULL|              14.9|               1.6|               13.4|              13.8|
-|    max|   2026-09|              24.0|               2.8|               23.2|              14.9|
-+-------+----------+------------------+------------------+-------------------+------------------+
+--- Numeric Summary Statistics ---
++-------+------------------+------------------+-------------------+------------------+
+|summary|  urban_annual_pct|     urban_mom_pct|national_annual_pct|   core_annual_pct|
++-------+------------------+------------------+-------------------+------------------+
+|  count|                21|                19|                 14|                14|
+|   mean|14.204761904761906|0.9947368421052635| 12.957142857142856|12.364285714285716|
+| stddev|2.6004761468769884|0.9143751261626867|  3.480210932094222| 1.454228393265728|
+|    min|              11.7|              -0.5|               10.0|              10.0|
+|    25%|              12.5|               0.1|               10.3|              11.3|
+|    50%|              13.9|               1.3|               12.7|              12.1|
+|    75%|              14.9|               1.6|               13.4|              13.8|
+|    max|              24.0|               2.8|               23.2|              14.9|
++-------+------------------+------------------+-------------------+------------------+
 
 
 ============================================================
- Comprehensive Profiling for Table: bronze.raw_egypt_locations 
+ Comprehensive Profiling for Table: bronze.raw_egypt_locations
 ============================================================
 Total Rows: 151
 Total Columns: 7
-Duplicate Rows: 0 (0.00% of data)
+Exact Duplicate Rows: 0 (0.00% of data)
+Business Key: city_id
+Null Business Key Rows: 0
+Duplicate Business Key Rows: 0
 
 --- Schema ---
 root
@@ -66,53 +72,44 @@ root
  |-- governorate_en: string (nullable = true)
 
 
---- Missing Values (Nulls / NaNs) ---
+--- Missing Values (Nulls / NaNs / Blank Strings) ---
 -RECORD 0---------------
- city_id          | 0   
- city_ar          | 0   
- city_en          | 0   
- governorate_code | 0   
- governorate_id   | 0   
- governorate_ar   | 0   
- governorate_en   | 0   
+ city_id          | 0
+ city_ar          | 0
+ city_en          | 0
+ governorate_code | 0
+ governorate_id   | 0
+ governorate_ar   | 0
+ governorate_en   | 0
 
 
---- Distinct Values Count ---
+--- Approximate Distinct Values Count ---
 -RECORD 0---------------
- city_id          | 151 
- city_ar          | 151 
- city_en          | 151 
- governorate_code | 27  
- governorate_id   | 27  
- governorate_ar   | 27  
- governorate_en   | 27  
+ city_id          | 151
+ city_ar          | 142
+ city_en          | 146
+ governorate_code | 28
+ governorate_id   | 27
+ governorate_ar   | 28
+ governorate_en   | 28
 
 
---- Comprehensive Summary Statistics ---
-+-------+------------------+--------------+---------------+----------------+-----------------+--------------+--------------+
-|summary|           city_id|       city_ar|        city_en|governorate_code|   governorate_id|governorate_ar|governorate_en|
-+-------+------------------+--------------+---------------+----------------+-----------------+--------------+--------------+
-|  count|               151|           151|            151|             151|              151|           151|           151|
-|   mean|              76.0|          NULL|           NULL|            NULL|12.33774834437086|          NULL|          NULL|
-| stddev|43.734044709661454|          NULL|           NULL|            NULL|8.414184386870025|          NULL|          NULL|
-|    min|                 1|       15 مايو|10th of Ramadan|             ALX|                1|         أسوان|    Alexandria|
-|    25%|                38|          NULL|           NULL|            NULL|                5|          NULL|          NULL|
-|    50%|                76|          NULL|           NULL|            NULL|               11|          NULL|          NULL|
-|    75%|               114|          NULL|           NULL|            NULL|               20|          NULL|          NULL|
-|    max|               151|وسط الإسكندرية|          Zefta|             WAD|               27|         مطروح|          Suez|
-+-------+------------------+--------------+---------------+----------------+-----------------+--------------+--------------+
-
+--- Numeric Summary Statistics ---
+No numeric columns
 
 ============================================================
- Comprehensive Profiling for Table: bronze.raw_egypt_real_estate_listings 
+ Comprehensive Profiling for Table: bronze.raw_egypt_real_estate_listings
 ============================================================
 Total Rows: 19924
 Total Columns: 11
-Duplicate Rows: 0 (0.00% of data)
+Exact Duplicate Rows: 0 (0.00% of data)
+Business Key: url
+Null Business Key Rows: 0
+Duplicate Business Key Rows: 0
 
 --- Schema ---
 root
- |--     url: string (nullable = true)
+ |-- url: string (nullable = true)
  |-- price: string (nullable = true)
  |-- description: string (nullable = true)
  |-- location: string (nullable = true)
@@ -125,57 +122,48 @@ root
  |-- down_payment: string (nullable = true)
 
 
---- Missing Values (Nulls / NaNs) ---
+--- Missing Values (Nulls / NaNs / Blank Strings) ---
 -RECORD 0---------------
-     url        | 0     
- price          | 539   
- description    | 78    
- location       | 91    
- type           | 77    
- size           | 77    
- bedrooms       | 144   
- bathrooms      | 140   
- available_from | 663   
- payment_method | 541   
- down_payment   | 14479 
+ url            | 0
+ price          | 539
+ description    | 78
+ location       | 91
+ type           | 77
+ size           | 77
+ bedrooms       | 144
+ bathrooms      | 140
+ available_from | 663
+ payment_method | 541
+ down_payment   | 14479
 
 
---- Distinct Values Count ---
+--- Approximate Distinct Values Count ---
 -RECORD 0---------------
-     url        | 19924 
- price          | 4286  
- description    | 18130 
- location       | 1535  
- type           | 17    
- size           | 683   
- bedrooms       | 18    
- bathrooms      | 16    
- available_from | 353   
- payment_method | 2     
- down_payment   | 2030  
+ url            | 19666
+ price          | 4460
+ description    | 19049
+ location       | 1499
+ type           | 17
+ size           | 683
+ bedrooms       | 18
+ bathrooms      | 16
+ available_from | 353
+ payment_method | 2
+ down_payment   | 2034
 
 
---- Comprehensive Summary Statistics ---
-+-------+--------------------+---------+--------------------+--------------------+---------+-------------------+------------------+-----------------+--------------+--------------+------------+
-|summary|                 url|    price|         description|            location|     type|               size|          bedrooms|        bathrooms|available_from|payment_method|down_payment|
-+-------+--------------------+---------+--------------------+--------------------+---------+-------------------+------------------+-----------------+--------------+--------------+------------+
-|  count|               19924|    19385|               19846|               19833|    19847|              19847|             19780|            19784|         19261|         19383|        5445|
-|   mean|                NULL|     NULL|       1.285381541E9|                NULL|     NULL|               NULL|2.7865035516969217| 2.92013251783894|          NULL|          NULL|        NULL|
-| stddev|                NULL|     NULL|                NULL|                NULL|     NULL|               NULL|0.9518239280052054|1.243031396681073|          NULL|          NULL|        NULL|
-|    min|https://www.prope...|1,000,000|"\n2BR Apartment ...|10th District, Sh...|Apartment|1,001 sqft / 93 sqm|                 1|                1|    1 Apr 2026|          Cash|       1 EGP|
-|    25%|                NULL|     NULL|       1.285381541E9|                NULL|     NULL|               NULL|               2.0|              2.0|          NULL|          NULL|        NULL|
-|    50%|                NULL|     NULL|       1.285381541E9|                NULL|     NULL|               NULL|               3.0|              3.0|          NULL|          NULL|        NULL|
-|    75%|                NULL|     NULL|       1.285381541E9|                NULL|     NULL|               NULL|               3.0|              4.0|          NULL|          NULL|        NULL|
-|    max|https://www.prope...|  995,000|⸻\nOwn a Fully Fi...|بوابة النعيم, Riv...|   iVilla|  990 sqft / 92 sqm|      studio+ Maid|             none|    9 May 2025|  Installments| 999,600 EGP|
-+-------+--------------------+---------+--------------------+--------------------+---------+-------------------+------------------+-----------------+--------------+--------------+------------+
-
+--- Numeric Summary Statistics ---
+No numeric columns
 
 ============================================================
- Comprehensive Profiling for Table: bronze.raw_listings_stream 
+ Comprehensive Profiling for Table: bronze.raw_listings_stream
 ============================================================
-Total Rows: 189160
+Total Rows: 1000000
 Total Columns: 54
-Duplicate Rows: 0 (0.00% of data)
+Exact Duplicate Rows: skipped for large table; business-key duplicates are checked below
+Business Key: listing_id
+Null Business Key Rows: 0
+Duplicate Business Key Rows: 0
 
 --- Schema ---
 root
@@ -235,143 +223,134 @@ root
  |-- _ingested_at: timestamp (nullable = true)
 
 
---- Missing Values (Nulls / NaNs) ---
--RECORD 0---------------------
- listing_id          | 0      
- internal_id         | 0      
- category            | 0      
- listing_type        | 0      
- detail_url          | 0      
- property_type       | 0      
- offering_type       | 0      
- completion_status   | 0      
- title               | 0      
- price_egp           | 7554   
- price_period        | 0      
- price_currency      | 0      
- location_full       | 0      
- city                | 0      
- town                | 0      
- district            | 0      
- subdistrict         | 0      
- lat                 | 0      
- lon                 | 0      
- bedrooms            | 3736   
- bathrooms           | 0      
- area_value          | 5604   
- area_unit           | 0      
- furnished           | 0      
- listing_level       | 0      
- is_premium          | 0      
- is_verified         | 0      
- is_featured         | 0      
- is_new_construction | 0      
- is_direct_from_dev  | 0      
- is_exclusive        | 0      
- listed_date         | 0      
- images_count        | 0      
- has_view_360        | 0      
- video_url           | 142019 
- reference           | 0      
- rera                | 189360 
- description         | 0      
- amenities           | 0      
- payment_method      | 0      
- agent_id            | 0      
- agent_name          | 0      
- agent_email         | 9360   
- agent_is_super      | 0      
- agent_languages     | 0      
- broker_id           | 0      
- broker_name         | 0      
- broker_email        | 0      
- broker_phone        | 0      
- contact_phone       | 0      
- contact_whatsapp    | 0      
- contact_email       | 0      
- scraped_at          | 0      
- _ingested_at        | 0      
+--- Missing Values (Nulls / NaNs / Blank Strings) ---
+-RECORD 0----------------------
+ listing_id          | 0
+ internal_id         | 0
+ category            | 0
+ listing_type        | 0
+ detail_url          | 0
+ property_type       | 0
+ offering_type       | 0
+ completion_status   | 0
+ title               | 0
+ price_egp           | 39890
+ price_period        | 0
+ price_currency      | 0
+ location_full       | 0
+ city                | 0
+ town                | 0
+ district            | 0
+ subdistrict         | 0
+ lat                 | 0
+ lon                 | 0
+ bedrooms            | 19705
+ bathrooms           | 0
+ area_value          | 29930
+ area_unit           | 0
+ furnished           | 0
+ listing_level       | 0
+ is_premium          | 0
+ is_verified         | 0
+ is_featured         | 0
+ is_new_construction | 0
+ is_direct_from_dev  | 0
+ is_exclusive        | 0
+ listed_date         | 0
+ images_count        | 0
+ has_view_360        | 0
+ video_url           | 749710
+ reference           | 0
+ rera                | 1000000
+ description         | 0
+ amenities           | 0
+ payment_method      | 0
+ agent_id            | 0
+ agent_name          | 0
+ agent_email         | 49903
+ agent_is_super      | 0
+ agent_languages     | 0
+ broker_id           | 0
+ broker_name         | 0
+ broker_email        | 0
+ broker_phone        | 0
+ contact_phone       | 0
+ contact_whatsapp    | 0
+ contact_email       | 0
+ scraped_at          | 0
+ _ingested_at        | 0
 
 
---- Distinct Values Count ---
--RECORD 0---------------------
- listing_id          | 189360 
- internal_id         | 189360 
- category            | 2      
- listing_type        | 2      
- detail_url          | 189360 
- property_type       | 11     
- offering_type       | 2      
- completion_status   | 3      
- title               | 286    
- price_egp           | 41055  
- price_period        | 2      
- price_currency      | 1      
- location_full       | 13     
- city                | 11     
- town                | 8      
- district            | 12     
- subdistrict         | 13     
- lat                 | 134686 
- lon                 | 153091 
- bedrooms            | 13     
- bathrooms           | 9      
- area_value          | 181867 
- area_unit           | 1      
- furnished           | 3      
- listing_level       | 3      
- is_premium          | 2      
- is_verified         | 2      
- is_featured         | 2      
- is_new_construction | 2      
- is_direct_from_dev  | 2      
- is_exclusive        | 2      
- listed_date         | 3563   
- images_count        | 20     
- has_view_360        | 2      
- video_url           | 1      
- reference           | 170794 
- rera                | 0      
- description         | 143    
- amenities           | 4      
- payment_method      | 3      
- agent_id            | 4      
- agent_name          | 4      
- agent_email         | 4      
- agent_is_super      | 2      
- agent_languages     | 3      
- broker_id           | 4      
- broker_name         | 4      
- broker_email        | 4      
- broker_phone        | 4      
- contact_phone       | 4      
- contact_whatsapp    | 4      
- contact_email       | 4      
- scraped_at          | 189240 
- _ingested_at        | 905    
+--- Approximate Distinct Values Count ---
+-RECORD 0----------------------
+ listing_id          | 1106281
+ internal_id         | 897062
+ category            | 2
+ listing_type        | 2
+ detail_url          | 990297
+ property_type       | 11
+ offering_type       | 2
+ completion_status   | 3
+ title               | 288
+ price_egp           | 66758
+ price_period        | 2
+ price_currency      | 1
+ location_full       | 13
+ city                | 10
+ town                | 8
+ district            | 12
+ subdistrict         | 13
+ lat                 | 328390
+ lon                 | 413670
+ bedrooms            | 13
+ bathrooms           | 9
+ area_value          | 1026419
+ area_unit           | 1
+ furnished           | 3
+ listing_level       | 3
+ is_premium          | 2
+ is_verified         | 2
+ is_featured         | 2
+ is_new_construction | 2
+ is_direct_from_dev  | 2
+ is_exclusive        | 2
+ listed_date         | 3502
+ images_count        | 20
+ has_view_360        | 2
+ video_url           | 1
+ reference           | 622957
+ rera                | 0
+ description         | 133
+ amenities           | 4
+ payment_method      | 3
+ agent_id            | 4
+ agent_name          | 4
+ agent_email         | 4
+ agent_is_super      | 2
+ agent_languages     | 3
+ broker_id           | 4
+ broker_name         | 4
+ broker_email        | 4
+ broker_phone        | 4
+ contact_phone       | 4
+ contact_whatsapp    | 4
+ contact_email       | 4
+ scraped_at          | 1014217
+ _ingested_at        | 5205
 
 
---- Comprehensive Summary Statistics ---
-+-------+--------------+------------------+-----------+------------+--------------------+-------------+-------------+------------------+--------------------+--------------------+------------+--------------+--------------------+----------+--------------+--------+------------+------------------+------------------+------------------+------------------+------------------+---------+---------------+-------------+----------+-----------+-----------+-------------------+------------------+------------+-----------+-----------------+------------+--------------------+----------+----+--------------------+--------------------+--------------+--------+------------+--------------------+--------------+--------------------+---------+--------------------+----------------+--------------------+--------------------+--------------------+----------------+--------------------+
-|summary|    listing_id|       internal_id|   category|listing_type|          detail_url|property_type|offering_type| completion_status|               title|           price_egp|price_period|price_currency|       location_full|      city|          town|district| subdistrict|               lat|               lon|          bedrooms|         bathrooms|        area_value|area_unit|      furnished|listing_level|is_premium|is_verified|is_featured|is_new_construction|is_direct_from_dev|is_exclusive|listed_date|     images_count|has_view_360|           video_url| reference|rera|         description|           amenities|payment_method|agent_id|  agent_name|         agent_email|agent_is_super|     agent_languages|broker_id|         broker_name|    broker_email|        broker_phone|       contact_phone|    contact_whatsapp|   contact_email|          scraped_at|
-+-------+--------------+------------------+-----------+------------+--------------------+-------------+-------------+------------------+--------------------+--------------------+------------+--------------+--------------------+----------+--------------+--------+------------+------------------+------------------+------------------+------------------+------------------+---------+---------------+-------------+----------+-----------+-----------+-------------------+------------------+------------+-----------+-----------------+------------+--------------------+----------+----+--------------------+--------------------+--------------+--------+------------+--------------------+--------------+--------------------+---------+--------------------+----------------+--------------------+--------------------+--------------------+----------------+--------------------+
-|  count|        189760|            189760|     189760|      189760|              189760|       189760|       189760|            189760|              189760|              182191|      189760|        189760|              189760|    189760|        189760|  189760|      189760|            189760|            189760|            186020|            189760|            184140|   189760|         189760|       189760|    189760|     189760|     189760|             189760|            189760|      189760|     189760|           189760|      189760|               47430|    189760|   0|              189760|              189760|        189760|  189760|      189760|              180387|        189760|              189760|   189760|              189760|          189760|              189760|              189760|              189760|          189760|              189760|
-|   mean|          NULL|         1094879.5|       NULL|        NULL|                NULL|         NULL|         NULL|              NULL|                NULL|  6.21606724821753E7|        NULL|          NULL|                NULL|      NULL|          NULL|    NULL|        NULL|30.050905655417857| 30.86372711413905|3.8340877325018816|3.0253794266441822|256.02919731515357|     NULL|           NULL|         NULL|      NULL|       NULL|       NULL|               NULL|              NULL|        NULL|       NULL|14.49195826306914|        NULL|                NULL|      NULL|NULL|                NULL|                NULL|          NULL|    NULL|        NULL|                NULL|          NULL|                NULL|     NULL|                NULL|            NULL|2.010058406650590...|2.010058406650590...|2.010058406650590...|            NULL|                NULL|
-| stddev|          NULL|54779.137878095244|       NULL|        NULL|                NULL|         NULL|         NULL|              NULL|                NULL|1.0538385844882894E9|        NULL|          NULL|                NULL|      NULL|          NULL|    NULL|        NULL|0.8928671685850187|1.3340700784458894|3.0786224133364035|2.1762851024303194|148.41198299101313|     NULL|           NULL|         NULL|      NULL|       NULL|       NULL|               NULL|              NULL|        NULL|       NULL|5.766662830788128|        NULL|                NULL|      NULL|NULL|                NULL|                NULL|          NULL|    NULL|        NULL|                NULL|          NULL|                NULL|     NULL|                NULL|            NULL|  3370031.0792823797|  3370031.0792823797|  3370031.0792823797|            NULL|                NULL|
-|    min|PF-EGY-1000000|           1000000| Commercial|         buy|https://www.prope...|    Apartment|           RR|          off_plan|Apartment for Ren...|         -10010000.0|     monthly|           EGP|Allegria, Distric...|Alexandria|6th of October|   Degla|    Allegria|         27.370002|         27.830009|               0.0|               1.0|               0.0|      sqm|fully_furnished|     featured|     False|      False|      False|              False|             False|       False| 01/01/2021|               10|       False|https://www.youtu...|REF-100000|NULL|Spacious Apartmen...|Balcony, Security...|          Cash|  AG-101| Mohamed Ali| m.ali@realestate.eg|         False|              Arabic|   BRK-50|Coldwell Banker E...|contact@remax.eg|       +201001112233|       +201001112233|       +201001112233|contact@remax.eg|2020-12-22T12:30:08Z|
-|    25%|          NULL|         1047421.0|       NULL|        NULL|                NULL|         NULL|         NULL|              NULL|                NULL|           3037000.0|        NULL|          NULL|                NULL|      NULL|          NULL|    NULL|        NULL|         29.964427|         30.839628|               1.0|               1.0| 147.6486159460438|     NULL|           NULL|         NULL|      NULL|       NULL|       NULL|               NULL|              NULL|        NULL|       NULL|              9.0|        NULL|                NULL|      NULL|NULL|                NULL|                NULL|          NULL|    NULL|        NULL|                NULL|          NULL|                NULL|     NULL|                NULL|            NULL|    2.01004445566E11|    2.01004445566E11|    2.01004445566E11|            NULL|                NULL|
-|    50%|          NULL|         1094868.0|       NULL|        NULL|                NULL|         NULL|         NULL|              NULL|                NULL|           8104000.0|        NULL|          NULL|                NULL|      NULL|          NULL|    NULL|        NULL|         30.043799|         30.979248|               3.0|               2.0|222.37666212397238|     NULL|           NULL|         NULL|      NULL|       NULL|       NULL|               NULL|              NULL|        NULL|       NULL|             14.0|        NULL|                NULL|      NULL|NULL|                NULL|                NULL|          NULL|    NULL|        NULL|                NULL|          NULL|                NULL|     NULL|                NULL|            NULL|    2.01007778899E11|    2.01007778899E11|    2.01007778899E11|            NULL|                NULL|
-|    75%|          NULL|         1142300.0|       NULL|        NULL|                NULL|         NULL|         NULL|              NULL|                NULL|            1.5601E7|        NULL|          NULL|                NULL|      NULL|          NULL|    NULL|        NULL|         30.080557|         31.480127|               5.0|               4.0|306.34173589203203|     NULL|           NULL|         NULL|      NULL|       NULL|       NULL|               NULL|              NULL|        NULL|       NULL|             20.0|        NULL|                NULL|      NULL|NULL|                NULL|                NULL|          NULL|    NULL|        NULL|                NULL|          NULL|                NULL|     NULL|                NULL|            NULL|        2.0100999E11|        2.0100999E11|        2.0100999E11|            NULL|                NULL|
-|    max|PF-EGY-1189759|           1189759|Residential|        rent|https://www.prope...|    Warehouse|           RS|under_construction|Warehouse for Sal...|           9999000.0|    one_time|           EGP|Tiba Gardens, Zon...|      giza|        Smouha|  Zone 8|Tiba Gardens|         31.229996|             33.69|               9.0|               9.0| 99.99929498316854|      sqm|    unfurnished|     standard|      True|       True|       True|               True|              True|        True| 31/12/2024|                9|        True|https://www.youtu...|REF-999997|NULL|Spacious Warehous...|Security, Concier...|  Installments|  AG-104|Sarah Hassan|s.hassan@realesta...|          True|Arabic, English, ...|   BRK-53|        RE/MAX Egypt|support@nawy.com|       +201009990000|       +201009990000|       +201009990000|support@nawy.com|2026-01-29T18:19:21Z|
-+-------+--------------+------------------+-----------+------------+--------------------+-------------+-------------+------------------+--------------------+--------------------+------------+--------------+--------------------+----------+--------------+--------+------------+------------------+------------------+------------------+------------------+------------------+---------+---------------+-------------+----------+-----------+-----------+-------------------+------------------+------------+-----------+-----------------+------------+--------------------+----------+----+--------------------+--------------------+--------------+--------+------------+--------------------+--------------+--------------------+---------+--------------------+----------------+--------------------+--------------------+--------------------+----------------+--------------------+
-
+--- Numeric Summary Statistics ---
+No numeric columns
 
 ============================================================
- Comprehensive Profiling for Table: bronze.raw_propertyfinder 
+ Comprehensive Profiling for Table: bronze.raw_propertyfinder
 ============================================================
 Total Rows: 39713
 Total Columns: 53
-Duplicate Rows: 0 (0.00% of data)
+Exact Duplicate Rows: 0 (0.00% of data)
+Business Key: listing_id
+Null Business Key Rows: 1
+Duplicate Business Key Rows: 0
 
 --- Schema ---
 root
@@ -430,141 +409,144 @@ root
  |-- scraped_at: string (nullable = true)
 
 
---- Missing Values (Nulls / NaNs) ---
+--- Missing Values (Nulls / NaNs / Blank Strings) ---
 -RECORD 0--------------------
- listing_id          | 1     
- internal_id         | 1     
- category            | 0     
- listing_type        | 0     
- detail_url          | 1     
- property_type       | 1     
- offering_type       | 1     
- completion_status   | 19950 
- title               | 1     
- price_egp           | 1     
- price_period        | 1     
- price_currency      | 0     
- location_full       | 1     
- city                | 1     
- town                | 1     
- district            | 347   
- subdistrict         | 6759  
- lat                 | 1     
- lon                 | 1     
- bedrooms            | 35    
- bathrooms           | 30    
- area_value          | 1     
- area_unit           | 0     
- furnished           | 8385  
- listing_level       | 1     
- is_premium          | 0     
- is_verified         | 0     
- is_featured         | 0     
- is_new_construction | 0     
- is_direct_from_dev  | 0     
- is_exclusive        | 0     
- listed_date         | 1     
- images_count        | 0     
- has_view_360        | 0     
- video_url           | 39511 
- reference           | 1     
- rera                | 39713 
- description         | 1     
- amenities           | 33    
- payment_method      | 19774 
- agent_id            | 1     
- agent_name          | 8     
- agent_email         | 1     
- agent_is_super      | 0     
- agent_languages     | 30541 
- broker_id           | 1     
- broker_name         | 1     
- broker_email        | 203   
- broker_phone        | 203   
- contact_phone       | 1     
- contact_whatsapp    | 1     
- contact_email       | 1     
- scraped_at          | 0     
+ listing_id          | 1
+ internal_id         | 1
+ category            | 0
+ listing_type        | 0
+ detail_url          | 1
+ property_type       | 1
+ offering_type       | 1
+ completion_status   | 19950
+ title               | 1
+ price_egp           | 1
+ price_period        | 1
+ price_currency      | 0
+ location_full       | 1
+ city                | 1
+ town                | 1
+ district            | 347
+ subdistrict         | 6759
+ lat                 | 1
+ lon                 | 1
+ bedrooms            | 35
+ bathrooms           | 30
+ area_value          | 1
+ area_unit           | 0
+ furnished           | 8385
+ listing_level       | 1
+ is_premium          | 0
+ is_verified         | 0
+ is_featured         | 0
+ is_new_construction | 0
+ is_direct_from_dev  | 0
+ is_exclusive        | 0
+ listed_date         | 1
+ images_count        | 0
+ has_view_360        | 0
+ video_url           | 39511
+ reference           | 1
+ rera                | 39713
+ description         | 1
+ amenities           | 33
+ payment_method      | 19774
+ agent_id            | 1
+ agent_name          | 8
+ agent_email         | 1
+ agent_is_super      | 0
+ agent_languages     | 30541
+ broker_id           | 1
+ broker_name         | 1
+ broker_email        | 203
+ broker_phone        | 203
+ contact_phone       | 1
+ contact_whatsapp    | 1
+ contact_email       | 1
+ scraped_at          | 0
 
 
---- Distinct Values Count ---
+--- Approximate Distinct Values Count ---
 -RECORD 0--------------------
- listing_id          | 39712 
- internal_id         | 39712 
- category            | 2     
- listing_type        | 2     
- detail_url          | 39712 
- property_type       | 19    
- offering_type       | 2     
- completion_status   | 4     
- title               | 32700 
- price_egp           | 4957  
- price_period        | 2     
- price_currency      | 1     
- location_full       | 1959  
- city                | 12    
- town                | 67    
- district            | 519   
- subdistrict         | 1134  
- lat                 | 1817  
- lon                 | 1828  
- bedrooms            | 9     
- bathrooms           | 9     
- area_value          | 734   
- area_unit           | 1     
- furnished           | 3     
- listing_level       | 3     
- is_premium          | 2     
- is_verified         | 1     
- is_featured         | 2     
- is_new_construction | 1     
- is_direct_from_dev  | 1     
- is_exclusive        | 1     
- listed_date         | 36255 
- images_count        | 31    
- has_view_360        | 2     
- video_url           | 154   
- reference           | 39645 
- rera                | 0     
- description         | 35312 
- amenities           | 17995 
- payment_method      | 3     
- agent_id            | 2773  
- agent_name          | 2659  
- agent_email         | 2732  
- agent_is_super      | 1     
- agent_languages     | 30    
- broker_id           | 776   
- broker_name         | 776   
- broker_email        | 770   
- broker_phone        | 769   
- contact_phone       | 2483  
- contact_whatsapp    | 422   
- contact_email       | 2732  
- scraped_at          | 4736  
+ listing_id          | 41867
+ internal_id         | 40762
+ category            | 2
+ listing_type        | 2
+ detail_url          | 37802
+ property_type       | 19
+ offering_type       | 2
+ completion_status   | 4
+ title               | 32832
+ price_egp           | 4959
+ price_period        | 2
+ price_currency      | 1
+ location_full       | 2000
+ city                | 12
+ town                | 67
+ district            | 486
+ subdistrict         | 1234
+ lat                 | 1774
+ lon                 | 1838
+ bedrooms            | 9
+ bathrooms           | 9
+ area_value          | 734
+ area_unit           | 1
+ furnished           | 3
+ listing_level       | 3
+ is_premium          | 2
+ is_verified         | 1
+ is_featured         | 2
+ is_new_construction | 1
+ is_direct_from_dev  | 1
+ is_exclusive        | 1
+ listed_date         | 38912
+ images_count        | 31
+ has_view_360        | 2
+ video_url           | 155
+ reference           | 38957
+ rera                | 0
+ description         | 38433
+ amenities           | 19087
+ payment_method      | 3
+ agent_id            | 2901
+ agent_name          | 2746
+ agent_email         | 2756
+ agent_is_super      | 1
+ agent_languages     | 31
+ broker_id           | 765
+ broker_name         | 802
+ broker_email        | 831
+ broker_phone        | 734
+ contact_phone       | 2405
+ contact_whatsapp    | 451
+ contact_email       | 2756
+ scraped_at          | 4967
 
 
---- Comprehensive Summary Statistics ---
-+-------+--------------------+--------------------+--------+--------------------+--------------------+-------------+--------------------+-----------------+--------------------+-------------------+------------+--------------+--------------------+-----------+--------------------+--------------+------------+------------------+------------------+------------------+------------------+------------------+---------+---------+-------------+--------------------+------------------+--------------------+--------------------+----+---------------------+--------------------+--------------+------------------+----------+--------------------+---------------+------------------+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+
-|summary|          listing_id|         internal_id|category|        listing_type|          detail_url|property_type|       offering_type|completion_status|               title|          price_egp|price_period|price_currency|       location_full|       city|                town|      district| subdistrict|               lat|               lon|          bedrooms|         bathrooms|        area_value|area_unit|furnished|listing_level|         listed_date|      images_count|           video_url|           reference|rera|          description|           amenities|payment_method|          agent_id|agent_name|         agent_email|agent_languages|         broker_id|         broker_name|        broker_email|        broker_phone|       contact_phone|    contact_whatsapp|       contact_email|          scraped_at|
-+-------+--------------------+--------------------+--------+--------------------+--------------------+-------------+--------------------+-----------------+--------------------+-------------------+------------+--------------+--------------------+-----------+--------------------+--------------+------------+------------------+------------------+------------------+------------------+------------------+---------+---------+-------------+--------------------+------------------+--------------------+--------------------+----+---------------------+--------------------+--------------+------------------+----------+--------------------+---------------+------------------+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+
-|  count|               39712|               39712|   39713|               39713|               39712|        39712|               39712|            19763|               39712|              39712|       39712|         39713|               39712|      39712|               39712|         39366|       32954|             39712|             39712|             39678|             39683|             39712|    39713|    31328|        39712|               39712|             39713|                 202|               39712|   0|                39712|               39680|         19939|             39712|     39705|               39712|           9172|             39712|               39712|               39510|               39510|               39712|               39712|               39712|               39713|
-|   mean|                NULL|4.5379476594580986E7|    NULL|                NULL|                NULL|         NULL|                NULL|             NULL|                14.0|  7988803.423751007|        NULL|          NULL|                NULL|       NULL|                NULL|          NULL|       205.0| 29.97641938358041|31.318190561293786|3.0168104459329146| 2.872992515539769|218.48322925060435|     NULL|     NULL|         NULL|                NULL|12.275677989575202|                NULL|6.007136661752602E24|NULL|                 NULL|                NULL|          NULL|53288.360697018536|      NULL|                NULL|           NULL| 4144.885928686543|                NULL|                NULL|1.517035840827440...|3.031896595772034E14|6.318751750029809...|                NULL|                NULL|
-| stddev|                NULL| 1.880497855103947E7|    NULL|                NULL|                NULL|         NULL|                NULL|             NULL|                NULL|2.449278986512503E7|        NULL|          NULL|                NULL|       NULL|                NULL|          NULL|         0.0| 0.602531220876159|0.8573513961720631| 1.023164731163503|1.2064318308719422| 781.8238667093325|     NULL|     NULL|         NULL|                NULL| 4.823323644678921|                NULL|1.442699004660011E26|NULL|                 NULL|                NULL|          NULL|17909.357547524898|      NULL|                NULL|           NULL|10005.156141996635|                NULL|                NULL|8.625258008008838E10|6.037916225092367...| 7.69801883094568E10|                NULL|                NULL|
-|    min|000032CAVJZWGDTW1...|           2908155.0|     buy|project_recommend...|https://www.prope...|    Apartment|Residential for Rent|        completed|!! OWN APARTMENT ...|             1300.0|     monthly|           EGP|10th District, Sh...|Al Daqahlya|10th of Ramadan City| 10th District| 10th Sector|25.069366455078125| 25.47613525390625|                 1|                 1|               1.0|      sqm|       NO|     featured|2022-06-08T22:00:31Z|                 0|https://www.faceb...|              #0m117|NULL| !! LIMITED TIME O...|             Balcony|          cash|            5500.0|   In2Rent|01025923270mm@gma...|         Arabic|              55.0|-رواسي للاستثمار ...|01090662257m@gmai...|       1.000009081E9|    2.01000001398E11|      2.022125734E10|01025923270mm@gma...|2026-03-04T14:20:...|
-|    25%|                NULL|          5.245425E7|    NULL|                NULL|                NULL|         NULL|                NULL|             NULL|                14.0|            65000.0|        NULL|          NULL|                NULL|       NULL|                NULL|          NULL|       205.0| 30.00199317932129| 31.01556968688965|               2.0|               2.0|             130.0|     NULL|     NULL|         NULL|                NULL|                10|                NULL|              2671.0|NULL|                 NULL|                NULL|          NULL|           42365.0|      NULL|                NULL|           NULL|            1614.0|                NULL|                NULL|    2.01000137017E11|     2.0103299276E11|      2.022125734E10|                NULL|                NULL|
-|    50%|                NULL|         5.4760799E7|    NULL|                NULL|                NULL|         NULL|                NULL|             NULL|                14.0|           600000.0|        NULL|          NULL|                NULL|       NULL|                NULL|          NULL|       205.0| 30.02500343322754| 31.49715614318848|               3.0|               3.0|             175.0|     NULL|     NULL|         NULL|                NULL|                11|                NULL|             12347.0|NULL|                 NULL|                NULL|          NULL|           57455.0|      NULL|                NULL|           NULL|            4208.0|                NULL|                NULL|    2.01026694777E11|    2.01102191494E11|      2.022125734E10|                NULL|                NULL|
-|    75%|                NULL|         5.5758587E7|    NULL|                NULL|                NULL|         NULL|                NULL|             NULL|                14.0|          9102000.0|        NULL|          NULL|                NULL|       NULL|                NULL|          NULL|       205.0| 30.06147003173828|31.546247482299805|               3.0|               3.0|             245.0|     NULL|     NULL|         NULL|                NULL|                14|                NULL|            133331.0|NULL|                 NULL|                NULL|          NULL|           68818.0|      NULL|                NULL|           NULL|            5657.0|                NULL|                NULL|    2.01117033304E11|    2.01145564556E11|      2.022125734E10|                NULL|                NULL|
-|    max|ZZYN47EJGTFDXG7C4...|         5.6493417E7|    rent|            property|https://www.prope...|       iVilla|Residential for Sale| off_plan_primary|⁠Below market pri...|              1.0E9|        sell|           EGP|بوابة النعيم, Riv...|       Suez|             Zamalek|katameya coast|بوابة النعيم|31.497467041015625| 34.89657211303711|            studio|              none|           96600.0|      sqm|      YES|     standard|2026-03-04T23:42:53Z|                30|youtube.com/watch...|      zyad-mivida-25|NULL|【شقة مميزة للبيع ...|Walk-in Closet | ...|  installments|           73845.0|⁦ahmed fox|zyadmohamedsaad@g...|         German|          179957.0|​Cairo House Real...|ziiziiramdan@gmai...|    2.01558194855E11| 1.20322811201098E19|    2.01559777173E11|zyadmohamedsaad@g...|2026-03-05T00:43:...|
-+-------+--------------------+--------------------+--------+--------------------+--------------------+-------------+--------------------+-----------------+--------------------+-------------------+------------+--------------+--------------------+-----------+--------------------+--------------+------------+------------------+------------------+------------------+------------------+------------------+---------+---------+-------------+--------------------+------------------+--------------------+--------------------+----+---------------------+--------------------+--------------+------------------+----------+--------------------+---------------+------------------+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+
+--- Numeric Summary Statistics ---
++-------+--------------------+-------------------+------------------+------------------+------------------+----+------------------+------------------+--------------------+--------------------+--------------------+
+|summary|         internal_id|          price_egp|               lat|               lon|        area_value|rera|          agent_id|         broker_id|        broker_phone|       contact_phone|    contact_whatsapp|
++-------+--------------------+-------------------+------------------+------------------+------------------+----+------------------+------------------+--------------------+--------------------+--------------------+
+|  count|               39712|              39712|             39712|             39712|             39712|   0|             39712|             39712|               39510|               39712|               39712|
+|   mean|4.5379476594580986E7|  7988803.423751007| 29.97641938358041|31.318190561293786|218.48322925060435|NULL|53288.360697018536| 4144.885928686543|1.517035840827440...|3.031896595772034E14|6.318751750029809...|
+| stddev| 1.880497855103947E7|2.449278986512503E7| 0.602531220876159|0.8573513961720631| 781.8238667093325|NULL|17909.357547524898|10005.156141996635|8.625258008008838E10|6.037916225092367...| 7.69801883094568E10|
+|    min|           2908155.0|             1300.0|25.069366455078125| 25.47613525390625|               1.0|NULL|            5500.0|              55.0|       1.000009081E9|    2.01000001398E11|      2.022125734E10|
+|    25%|          5.245425E7|            65000.0| 30.00199317932129| 31.01556968688965|             130.0|NULL|           42365.0|            1614.0|    2.01000137017E11|     2.0103299276E11|      2.022125734E10|
+|    50%|         5.4760799E7|           600000.0| 30.02500343322754| 31.49715614318848|             175.0|NULL|           57455.0|            4208.0|    2.01026694777E11|    2.01102191494E11|      2.022125734E10|
+|    75%|         5.5758587E7|          9102000.0| 30.06147003173828|31.546247482299805|             245.0|NULL|           68818.0|            5657.0|    2.01117033304E11|    2.01145564556E11|      2.022125734E10|
+|    max|         5.6493417E7|              1.0E9|31.497467041015625| 34.89657211303711|           96600.0|NULL|           73845.0|          179957.0|    2.01558194855E11| 1.20322811201098E19|    2.01559777173E11|
++-------+--------------------+-------------------+------------------+------------------+------------------+----+------------------+------------------+--------------------+--------------------+--------------------+
 
 
 ============================================================
- Comprehensive Profiling for Table: bronze.raw_usd_egp_monthly 
+ Comprehensive Profiling for Table: bronze.raw_usd_egp_monthly
 ============================================================
 Total Rows: 22
 Total Columns: 2
-Duplicate Rows: 0 (0.00% of data)
+Exact Duplicate Rows: 0 (0.00% of data)
+Business Key: year_month
+Null Business Key Rows: 0
+Duplicate Business Key Rows: 0
 
 --- Schema ---
 root
@@ -572,39 +554,42 @@ root
  |-- usd_egp: double (nullable = true)
 
 
---- Missing Values (Nulls / NaNs) ---
+--- Missing Values (Nulls / NaNs / Blank Strings) ---
 -RECORD 0---------
- year_month | 0   
- usd_egp    | 0   
+ year_month | 0
+ usd_egp    | 0
 
 
---- Distinct Values Count ---
+--- Approximate Distinct Values Count ---
 -RECORD 0---------
- year_month | 22  
- usd_egp    | 22  
+ year_month | 21
+ usd_egp    | 22
 
 
---- Comprehensive Summary Statistics ---
-+-------+----------+------------------+
-|summary|year_month|           usd_egp|
-+-------+----------+------------------+
-|  count|        22|                22|
-|   mean|      NULL| 49.94810454545455|
-| stddev|      NULL|1.8464374896843065|
-|    min|   2025-01|           47.1717|
-|    25%|      NULL|           48.2572|
-|    50%|      NULL|            50.276|
-|    75%|      NULL|           50.9837|
-|    max|   2026-10|           52.9959|
-+-------+----------+------------------+
+--- Numeric Summary Statistics ---
++-------+------------------+
+|summary|           usd_egp|
++-------+------------------+
+|  count|                22|
+|   mean| 49.94810454545455|
+| stddev|1.8464374896843065|
+|    min|           47.1717|
+|    25%|           48.2572|
+|    50%|            50.276|
+|    75%|           50.9837|
+|    max|           52.9959|
++-------+------------------+
 
 
 ============================================================
- Comprehensive Profiling for Table: bronze.stg_listings 
+ Comprehensive Profiling for Table: bronze.stg_listings
 ============================================================
-Total Rows: 180
+Total Rows: 140
 Total Columns: 54
-Duplicate Rows: 0 (0.00% of data)
+Exact Duplicate Rows: 0 (0.00% of data)
+Business Key: listing_id
+Null Business Key Rows: 0
+Duplicate Business Key Rows: 0
 
 --- Schema ---
 root
@@ -664,133 +649,1185 @@ root
  |-- _ingested_at: timestamp (nullable = true)
 
 
---- Missing Values (Nulls / NaNs) ---
+--- Missing Values (Nulls / NaNs / Blank Strings) ---
 -RECORD 0------------------
- listing_id          | 0   
- internal_id         | 0   
- category            | 0   
- listing_type        | 0   
- detail_url          | 0   
- property_type       | 0   
- offering_type       | 0   
- completion_status   | 0   
- title               | 0   
- price_egp           | 10  
- price_period        | 0   
- price_currency      | 0   
- location_full       | 0   
- city                | 0   
- town                | 0   
- district            | 0   
- subdistrict         | 0   
- lat                 | 0   
- lon                 | 0   
- bedrooms            | 7   
- bathrooms           | 0   
- area_value          | 4   
- area_unit           | 0   
- furnished           | 0   
- listing_level       | 0   
- is_premium          | 0   
- is_verified         | 0   
- is_featured         | 0   
- is_new_construction | 0   
- is_direct_from_dev  | 0   
- is_exclusive        | 0   
- listed_date         | 0   
- images_count        | 0   
- has_view_360        | 0   
- video_url           | 135 
- reference           | 0   
- rera                | 180 
- description         | 0   
- amenities           | 0   
- payment_method      | 0   
- agent_id            | 0   
- agent_name          | 0   
- agent_email         | 6   
- agent_is_super      | 0   
- agent_languages     | 0   
- broker_id           | 0   
- broker_name         | 0   
- broker_email        | 0   
- broker_phone        | 0   
- contact_phone       | 0   
- contact_whatsapp    | 0   
- contact_email       | 0   
- scraped_at          | 0   
- _ingested_at        | 0   
+ listing_id          | 0
+ internal_id         | 0
+ category            | 0
+ listing_type        | 0
+ detail_url          | 0
+ property_type       | 0
+ offering_type       | 0
+ completion_status   | 0
+ title               | 0
+ price_egp           | 5
+ price_period        | 0
+ price_currency      | 0
+ location_full       | 0
+ city                | 0
+ town                | 0
+ district            | 0
+ subdistrict         | 0
+ lat                 | 0
+ lon                 | 0
+ bedrooms            | 2
+ bathrooms           | 0
+ area_value          | 2
+ area_unit           | 0
+ furnished           | 0
+ listing_level       | 0
+ is_premium          | 0
+ is_verified         | 0
+ is_featured         | 0
+ is_new_construction | 0
+ is_direct_from_dev  | 0
+ is_exclusive        | 0
+ listed_date         | 0
+ images_count        | 0
+ has_view_360        | 0
+ video_url           | 103
+ reference           | 0
+ rera                | 140
+ description         | 0
+ amenities           | 0
+ payment_method      | 0
+ agent_id            | 0
+ agent_name          | 0
+ agent_email         | 10
+ agent_is_super      | 0
+ agent_languages     | 0
+ broker_id           | 0
+ broker_name         | 0
+ broker_email        | 0
+ broker_phone        | 0
+ contact_phone       | 0
+ contact_whatsapp    | 0
+ contact_email       | 0
+ scraped_at          | 0
+ _ingested_at        | 0
 
 
---- Distinct Values Count ---
+--- Approximate Distinct Values Count ---
 -RECORD 0------------------
- listing_id          | 180 
- internal_id         | 180 
- category            | 2   
- listing_type        | 2   
- detail_url          | 180 
- property_type       | 11  
- offering_type       | 2   
- completion_status   | 3   
- title               | 98  
- price_egp           | 170 
- price_period        | 2   
- price_currency      | 1   
- location_full       | 13  
- city                | 9   
- town                | 8   
- district            | 12  
- subdistrict         | 13  
- lat                 | 180 
- lon                 | 180 
- bedrooms            | 13  
- bathrooms           | 9   
- area_value          | 176 
- area_unit           | 1   
- furnished           | 3   
- listing_level       | 3   
- is_premium          | 2   
- is_verified         | 2   
- is_featured         | 2   
- is_new_construction | 2   
- is_direct_from_dev  | 2   
- is_exclusive        | 2   
- listed_date         | 163 
- images_count        | 20  
- has_view_360        | 2   
- video_url           | 1   
- reference           | 180 
- rera                | 0   
- description         | 78  
- amenities           | 4   
- payment_method      | 3   
- agent_id            | 4   
- agent_name          | 4   
- agent_email         | 4   
- agent_is_super      | 2   
- agent_languages     | 3   
- broker_id           | 4   
- broker_name         | 4   
- broker_email        | 4   
- broker_phone        | 4   
- contact_phone       | 4   
- contact_whatsapp    | 4   
- contact_email       | 4   
- scraped_at          | 180 
- _ingested_at        | 1   
+ listing_id          | 137
+ internal_id         | 139
+ category            | 2
+ listing_type        | 2
+ detail_url          | 142
+ property_type       | 10
+ offering_type       | 2
+ completion_status   | 3
+ title               | 82
+ price_egp           | 129
+ price_period        | 2
+ price_currency      | 1
+ location_full       | 13
+ city                | 7
+ town                | 8
+ district            | 12
+ subdistrict         | 13
+ lat                 | 138
+ lon                 | 147
+ bedrooms            | 13
+ bathrooms           | 9
+ area_value          | 134
+ area_unit           | 1
+ furnished           | 3
+ listing_level       | 3
+ is_premium          | 2
+ is_verified         | 2
+ is_featured         | 2
+ is_new_construction | 2
+ is_direct_from_dev  | 2
+ is_exclusive        | 2
+ listed_date         | 129
+ images_count        | 20
+ has_view_360        | 2
+ video_url           | 1
+ reference           | 141
+ rera                | 0
+ description         | 67
+ amenities           | 4
+ payment_method      | 3
+ agent_id            | 4
+ agent_name          | 4
+ agent_email         | 4
+ agent_is_super      | 2
+ agent_languages     | 3
+ broker_id           | 4
+ broker_name         | 4
+ broker_email        | 4
+ broker_phone        | 4
+ contact_phone       | 4
+ contact_whatsapp    | 4
+ contact_email       | 4
+ scraped_at          | 149
+ _ingested_at        | 1
 
 
---- Comprehensive Summary Statistics ---
-+-------+--------------+-----------------+-----------+------------+--------------------+-------------+-------------+------------------+--------------------+--------------------+------------+--------------+--------------------+----------+--------------+--------+------------+------------------+------------------+------------------+-----------------+------------------+---------+---------------+-------------+----------+-----------+-----------+-------------------+------------------+------------+-----------+-----------------+------------+--------------------+----------+----+--------------------+--------------------+--------------+--------+------------+--------------------+--------------+--------------------+---------+--------------------+----------------+--------------------+--------------------+--------------------+----------------+--------------------+
-|summary|    listing_id|      internal_id|   category|listing_type|          detail_url|property_type|offering_type| completion_status|               title|           price_egp|price_period|price_currency|       location_full|      city|          town|district| subdistrict|               lat|               lon|          bedrooms|        bathrooms|        area_value|area_unit|      furnished|listing_level|is_premium|is_verified|is_featured|is_new_construction|is_direct_from_dev|is_exclusive|listed_date|     images_count|has_view_360|           video_url| reference|rera|         description|           amenities|payment_method|agent_id|  agent_name|         agent_email|agent_is_super|     agent_languages|broker_id|         broker_name|    broker_email|        broker_phone|       contact_phone|    contact_whatsapp|   contact_email|          scraped_at|
-+-------+--------------+-----------------+-----------+------------+--------------------+-------------+-------------+------------------+--------------------+--------------------+------------+--------------+--------------------+----------+--------------+--------+------------+------------------+------------------+------------------+-----------------+------------------+---------+---------------+-------------+----------+-----------+-----------+-------------------+------------------+------------+-----------+-----------------+------------+--------------------+----------+----+--------------------+--------------------+--------------+--------+------------+--------------------+--------------+--------------------+---------+--------------------+----------------+--------------------+--------------------+--------------------+----------------+--------------------+
-|  count|           180|              180|        180|         180|                 180|          180|          180|               180|                 180|                 170|         180|           180|                 180|       180|           180|     180|         180|               180|               180|               173|              180|               176|      180|            180|          180|       180|        180|        180|                180|               180|         180|        180|              180|         180|                  45|       180|   0|                 180|                 180|           180|     180|         180|                 174|           180|                 180|      180|                 180|             180|                 180|                 180|                 180|             180|                 180|
-|   mean|          NULL|        1190509.5|       NULL|        NULL|                NULL|         NULL|         NULL|              NULL|                NULL|1.0345145294117646E7|        NULL|          NULL|                NULL|      NULL|          NULL|    NULL|        NULL|29.753024794444457|31.231871050000002|3.7514450867052025|             2.95| 246.1754317736416|     NULL|           NULL|         NULL|      NULL|       NULL|       NULL|               NULL|              NULL|        NULL|       NULL|14.86111111111111|        NULL|                NULL|      NULL|NULL|                NULL|                NULL|          NULL|    NULL|        NULL|                NULL|          NULL|                NULL|     NULL|                NULL|            NULL|2.010060414274555...|2.010060414274555...|2.010060414274555...|            NULL|                NULL|
-| stddev|          NULL|52.10566188045211|       NULL|        NULL|                NULL|         NULL|         NULL|              NULL|                NULL|1.2066154247447802E7|        NULL|          NULL|                NULL|      NULL|          NULL|    NULL|        NULL|1.1089976118213054|1.4231663509001973|2.9157871595931684|2.033998731068638|142.74758511016535|     NULL|           NULL|         NULL|      NULL|       NULL|       NULL|               NULL|              NULL|        NULL|       NULL|5.801910578102737|        NULL|                NULL|      NULL|NULL|                NULL|                NULL|          NULL|    NULL|        NULL|                NULL|          NULL|                NULL|     NULL|                NULL|            NULL|  3236734.5117553356|  3236734.5117553356|  3236734.5117553356|            NULL|                NULL|
-|    min|PF-EGY-1190420|          1190420| Commercial|         buy|https://www.prope...|    Apartment|           RR|          off_plan|Apartment for Ren...|         -26206000.0|     monthly|           EGP|Allegria, Distric...|Alexandria|6th of October|   Degla|    Allegria|         27.370412|         27.830313|               0.0|              1.0|               0.0|      sqm|fully_furnished|     featured|     False|      False|      False|              False|             False|       False| 02/12/2023|               10|       False|https://www.youtu...|REF-101279|NULL|Spacious Apartmen...|Balcony, Security...|          Cash|  AG-101| Mohamed Ali| m.ali@realestate.eg|         False|              Arabic|   BRK-50|Coldwell Banker E...|contact@remax.eg|       +201001112233|       +201001112233|       +201001112233|contact@remax.eg|2021-01-17T02:45:53Z|
-|    25%|          NULL|        1190464.0|       NULL|        NULL|                NULL|         NULL|         NULL|              NULL|                NULL|           3103000.0|        NULL|          NULL|                NULL|      NULL|          NULL|    NULL|        NULL|         29.946818|         30.902674|               1.0|              1.0|137.33669846300143|     NULL|           NULL|         NULL|      NULL|       NULL|       NULL|               NULL|              NULL|        NULL|       NULL|             10.0|        NULL|                NULL|      NULL|NULL|                NULL|                NULL|          NULL|    NULL|        NULL|                NULL|          NULL|                NULL|     NULL|                NULL|            NULL|    2.01004445566E11|    2.01004445566E11|    2.01004445566E11|            NULL|                NULL|
-|    50%|          NULL|        1190509.0|       NULL|        NULL|                NULL|         NULL|         NULL|              NULL|                NULL|           9122000.0|        NULL|          NULL|                NULL|      NULL|          NULL|    NULL|        NULL|         30.030512|         31.279431|               3.0|              2.0|218.74293212577237|     NULL|           NULL|         NULL|      NULL|       NULL|       NULL|               NULL|              NULL|        NULL|       NULL|             15.0|        NULL|                NULL|      NULL|NULL|                NULL|                NULL|          NULL|    NULL|        NULL|                NULL|          NULL|                NULL|     NULL|                NULL|            NULL|    2.01007778899E11|    2.01007778899E11|    2.01007778899E11|            NULL|                NULL|
-|    75%|          NULL|        1190554.0|       NULL|        NULL|                NULL|         NULL|         NULL|              NULL|                NULL|            1.5753E7|        NULL|          NULL|                NULL|      NULL|          NULL|    NULL|        NULL|         30.062595|          31.49507|               5.0|              4.0| 290.7760707467708|     NULL|           NULL|         NULL|      NULL|       NULL|       NULL|               NULL|              NULL|        NULL|       NULL|             20.0|        NULL|                NULL|      NULL|NULL|                NULL|                NULL|          NULL|    NULL|        NULL|                NULL|          NULL|                NULL|     NULL|                NULL|            NULL|        2.0100999E11|        2.0100999E11|        2.0100999E11|            NULL|                NULL|
-|    max|PF-EGY-1190599|          1190599|Residential|        rent|https://www.prope...|    Warehouse|           RS|under_construction|Warehouse for Sal...|           9922000.0|    one_time|           EGP|Tiba Gardens, Zon...|      giza|        Smouha|  Zone 8|Tiba Gardens|         31.221256|         33.689056|               9.0|              9.0| 97.39764774731708|      sqm|    unfurnished|     standard|      True|       True|       True|               True|              True|        True| 27/08/2022|                9|        True|https://www.youtu...|REF-998681|NULL|Spacious Warehous...|Security, Concier...|  Installments|  AG-104|Sarah Hassan|s.hassan@realesta...|          True|Arabic, English, ...|   BRK-53|        RE/MAX Egypt|support@nawy.com|       +201009990000|       +201009990000|       +201009990000|support@nawy.com|2026-01-21T17:04:08Z|
-+-------+--------------+-----------------+-----------+------------+--------------------+-------------+-------------+------------------+--------------------+--------------------+------------+--------------+--------------------+----------+--------------+--------+------------+------------------+------------------+------------------+-----------------+------------------+---------+---------------+-------------+----------+-----------+-----------+-------------------+------------------+------------+-----------+-----------------+------------+--------------------+----------+----+--------------------+--------------------+--------------+--------+------------+--------------------+--------------+--------------------+---------+--------------------+----------------+--------------------+--------------------+--------------------+----------------+--------------------+
+--- Numeric Summary Statistics ---
+No numeric columns
+
+============================================================
+ Comprehensive Profiling for Table: silver.egypt_locations
+============================================================
+Total Rows: 151
+Total Columns: 8
+Exact Duplicate Rows: 0 (0.00% of data)
+Business Key: city_id
+Null Business Key Rows: 0
+Duplicate Business Key Rows: 0
+
+--- Schema ---
+root
+ |-- city_id: long (nullable = true)
+ |-- city_ar: string (nullable = true)
+ |-- city_en: string (nullable = true)
+ |-- governorate_code: string (nullable = true)
+ |-- governorate_id: long (nullable = true)
+ |-- governorate_ar: string (nullable = true)
+ |-- governorate_en: string (nullable = true)
+ |-- _silver_processed_at: timestamp (nullable = true)
+
+
+--- Missing Values (Nulls / NaNs / Blank Strings) ---
+-RECORD 0-------------------
+ city_id              | 0
+ city_ar              | 0
+ city_en              | 0
+ governorate_code     | 0
+ governorate_id       | 0
+ governorate_ar       | 0
+ governorate_en       | 0
+ _silver_processed_at | 0
+
+
+--- Approximate Distinct Values Count ---
+-RECORD 0-------------------
+ city_id              | 151
+ city_ar              | 142
+ city_en              | 146
+ governorate_code     | 28
+ governorate_id       | 27
+ governorate_ar       | 28
+ governorate_en       | 28
+ _silver_processed_at | 1
+
+
+--- Numeric Summary Statistics ---
+No numeric columns
+
+============================================================
+ Comprehensive Profiling for Table: silver.location
+============================================================
+Total Rows: 1696
+Total Columns: 8
+Exact Duplicate Rows: 0 (0.00% of data)
+Business Key: location_id
+Null Business Key Rows: 0
+Duplicate Business Key Rows: 0
+
+--- Schema ---
+root
+ |-- location_id: string (nullable = true)
+ |-- city: string (nullable = true)
+ |-- town: string (nullable = true)
+ |-- district: string (nullable = true)
+ |-- subdistrict: string (nullable = true)
+ |-- lat: double (nullable = true)
+ |-- lon: double (nullable = true)
+ |-- _silver_processed_at: timestamp (nullable = true)
+
+
+--- Missing Values (Nulls / NaNs / Blank Strings) ---
+-RECORD 0-------------------
+ location_id          | 0
+ city                 | 0
+ town                 | 0
+ district             | 29
+ subdistrict          | 458
+ lat                  | 0
+ lon                  | 0
+ _silver_processed_at | 0
+
+
+--- Approximate Distinct Values Count ---
+-RECORD 0--------------------
+ location_id          | 1640
+ city                 | 13
+ town                 | 73
+ district             | 500
+ subdistrict          | 1212
+ lat                  | 1599
+ lon                  | 1608
+ _silver_processed_at | 1
+
+
+--- Silver Rule Violations ---
+-RECORD 0---------------
+ invalid_lat_rows | 0
+ invalid_lon_rows | 0
+
+
+--- Numeric Summary Statistics ---
++-------+------------------+------------------+
+|summary|               lat|               lon|
++-------+------------------+------------------+
+|  count|              1696|              1696|
+|   mean| 30.04283953667428| 31.12273458930148|
+| stddev|0.8103180768275601| 1.106291031599307|
+|    min|25.069366455078125| 25.47613525390625|
+|    25%|29.980928421020508| 30.94277000427246|
+|    50%|30.040754318237305|31.265026092529297|
+|    75%| 30.09088516235352| 31.48981094360352|
+|    max|31.497467041015625| 34.89657211303711|
++-------+------------------+------------------+
+
+
+============================================================
+ Comprehensive Profiling for Table: silver.listing
+============================================================
+Total Rows: 980674
+Total Columns: 46
+Exact Duplicate Rows: skipped for large table; business-key duplicates are checked below
+Business Key: listing_id
+Null Business Key Rows: 0
+Duplicate Business Key Rows: 0
+
+--- Schema ---
+root
+ |-- listing_id: string (nullable = true)
+ |-- internal_id: string (nullable = true)
+ |-- listing_type: string (nullable = true)
+ |-- detail_url: string (nullable = true)
+ |-- completion_status: string (nullable = true)
+ |-- title: string (nullable = true)
+ |-- price_egp: double (nullable = true)
+ |-- price_period: string (nullable = true)
+ |-- price_currency: string (nullable = true)
+ |-- location_full: string (nullable = true)
+ |-- lat: double (nullable = true)
+ |-- lon: double (nullable = true)
+ |-- bedrooms: integer (nullable = true)
+ |-- bathrooms: integer (nullable = true)
+ |-- area_value: double (nullable = true)
+ |-- area_unit: string (nullable = true)
+ |-- furnished: string (nullable = true)
+ |-- listing_level: string (nullable = true)
+ |-- is_premium: boolean (nullable = true)
+ |-- is_verified: boolean (nullable = true)
+ |-- is_featured: boolean (nullable = true)
+ |-- is_new_construction: boolean (nullable = true)
+ |-- is_direct_from_dev: boolean (nullable = true)
+ |-- is_exclusive: boolean (nullable = true)
+ |-- listed_date: timestamp (nullable = true)
+ |-- images_count: integer (nullable = true)
+ |-- has_view_360: boolean (nullable = true)
+ |-- video_url: string (nullable = true)
+ |-- reference: string (nullable = true)
+ |-- rera: string (nullable = true)
+ |-- description: string (nullable = true)
+ |-- payment_method: string (nullable = true)
+ |-- agent_id: string (nullable = true)
+ |-- agent_is_super: boolean (nullable = true)
+ |-- agent_languages: string (nullable = true)
+ |-- contact_phone: string (nullable = true)
+ |-- contact_whatsapp: string (nullable = true)
+ |-- contact_email: string (nullable = true)
+ |-- scraped_at: timestamp (nullable = true)
+ |-- listing_year_month: string (nullable = true)
+ |-- _silver_processed_at: timestamp (nullable = true)
+ |-- source: string (nullable = true)
+ |-- _ingested_at: timestamp (nullable = true)
+ |-- location_id: string (nullable = true)
+ |-- property_id: string (nullable = true)
+ |-- year_month: string (nullable = true)
+
+
+--- Missing Values (Nulls / NaNs / Blank Strings) ---
+-RECORD 0----------------------
+ listing_id           | 0
+ internal_id          | 0
+ listing_type         | 0
+ detail_url           | 0
+ completion_status    | 19949
+ title                | 0
+ price_egp            | 0
+ price_period         | 0
+ price_currency       | 0
+ location_full        | 0
+ lat                  | 0
+ lon                  | 0
+ bedrooms             | 19671
+ bathrooms            | 37
+ area_value           | 28420
+ area_unit            | 0
+ furnished            | 8384
+ listing_level        | 0
+ is_premium           | 0
+ is_verified          | 0
+ is_featured          | 0
+ is_new_construction  | 0
+ is_direct_from_dev   | 0
+ is_exclusive         | 0
+ listed_date          | 18362
+ images_count         | 0
+ has_view_360         | 0
+ video_url            | 745002
+ reference            | 0
+ rera                 | 980674
+ description          | 0
+ payment_method       | 19773
+ agent_id             | 0
+ agent_is_super       | 0
+ agent_languages      | 30540
+ contact_phone        | 0
+ contact_whatsapp     | 0
+ contact_email        | 0
+ scraped_at           | 0
+ listing_year_month   | 0
+ _silver_processed_at | 0
+ source               | 0
+ _ingested_at         | 39712
+ location_id          | 0
+ property_id          | 0
+ year_month           | 0
+
+
+--- Approximate Distinct Values Count ---
+-RECORD 0-----------------------
+ listing_id           | 1060231
+ internal_id          | 895665
+ listing_type         | 3
+ detail_url           | 969888
+ completion_status    | 6
+ title                | 35004
+ price_egp            | 60655
+ price_period         | 3
+ price_currency       | 1
+ location_full        | 2020
+ lat                  | 309802
+ lon                  | 387527
+ bedrooms             | 13
+ bathrooms            | 9
+ area_value           | 955029
+ area_unit            | 1
+ furnished            | 6
+ listing_level        | 3
+ is_premium           | 2
+ is_verified          | 2
+ is_featured          | 2
+ is_new_construction  | 2
+ is_direct_from_dev   | 2
+ is_exclusive         | 2
+ listed_date          | 40325
+ images_count         | 31
+ has_view_360         | 2
+ video_url            | 157
+ reference            | 650338
+ rera                 | 0
+ description          | 38586
+ payment_method       | 4
+ agent_id             | 2591
+ agent_is_super       | 2
+ agent_languages      | 33
+ contact_phone        | 2495
+ contact_whatsapp     | 444
+ contact_email        | 2756
+ scraped_at           | 979572
+ listing_year_month   | 64
+ _silver_processed_at | 1
+ source               | 2
+ _ingested_at         | 5205
+ location_id          | 1640
+ property_id          | 53
+ year_month           | 64
+
+
+--- Silver Rule Violations ---
+-RECORD 0----------------------------
+ invalid_or_missing_price_rows | 0
+ invalid_area_rows             | 0
+ invalid_lat_rows              | 0
+ invalid_lon_rows              | 0
+
+
+--- Numeric Summary Statistics ---
++-------+--------------------+------------------+------------------+------------------+
+|summary|           price_egp|               lat|               lon|        area_value|
++-------+--------------------+------------------+------------------+------------------+
+|  count|              980674|            980674|            980674|            952254|
+|   mean|6.0952567608813144E7|30.048631473212907| 30.88230108758141| 256.9347608445713|
+| stddev|1.0270060087803607E9|0.8824679573758228|1.3204770648892314| 215.1015025667617|
+|    min|         1.001490928|25.069366455078125| 25.47613525390625|               1.0|
+|    25%|           2682000.0|         29.966306|         30.843738| 148.4076766474088|
+|    50%|           7796000.0|         30.043084|         30.987357|221.58359261804165|
+|    75%|            1.5279E7|         30.079272|         31.483203| 302.1420499009127|
+|    max|           6.4427E10|31.497467041015625| 34.89657211303711|           96600.0|
++-------+--------------------+------------------+------------------+------------------+
+
+
+============================================================
+ Comprehensive Profiling for Table: silver.property
+============================================================
+Total Rows: 53
+Total Columns: 5
+Exact Duplicate Rows: 0 (0.00% of data)
+Business Key: property_id
+Null Business Key Rows: 0
+Duplicate Business Key Rows: 0
+
+--- Schema ---
+root
+ |-- property_id: string (nullable = true)
+ |-- category: string (nullable = true)
+ |-- property_type: string (nullable = true)
+ |-- offering_type: string (nullable = true)
+ |-- _silver_processed_at: timestamp (nullable = true)
+
+
+--- Missing Values (Nulls / NaNs / Blank Strings) ---
+-RECORD 0-------------------
+ property_id          | 0
+ category             | 0
+ property_type        | 0
+ offering_type        | 0
+ _silver_processed_at | 0
+
+
+--- Approximate Distinct Values Count ---
+-RECORD 0-------------------
+ property_id          | 53
+ category             | 4
+ property_type        | 24
+ offering_type        | 4
+ _silver_processed_at | 1
+
+
+--- Numeric Summary Statistics ---
+No numeric columns
+
+============================================================
+ Comprehensive Profiling for Table: silver.egypt_inflation_monthly
+============================================================
+Total Rows: 21
+Total Columns: 6
+Exact Duplicate Rows: 0 (0.00% of data)
+Business Key: year_month
+Null Business Key Rows: 0
+Duplicate Business Key Rows: 0
+
+--- Schema ---
+root
+ |-- year_month: string (nullable = true)
+ |-- urban_annual_pct: double (nullable = true)
+ |-- urban_mom_pct: double (nullable = true)
+ |-- national_annual_pct: double (nullable = true)
+ |-- core_annual_pct: double (nullable = true)
+ |-- _silver_processed_at: timestamp (nullable = true)
+
+
+--- Missing Values (Nulls / NaNs / Blank Strings) ---
+-RECORD 0-------------------
+ year_month           | 0
+ urban_annual_pct     | 0
+ urban_mom_pct        | 2
+ national_annual_pct  | 7
+ core_annual_pct      | 7
+ _silver_processed_at | 0
+
+
+--- Approximate Distinct Values Count ---
+-RECORD 0-------------------
+ year_month           | 20
+ urban_annual_pct     | 16
+ urban_mom_pct        | 16
+ national_annual_pct  | 11
+ core_annual_pct      | 13
+ _silver_processed_at | 1
+
+
+--- Numeric Summary Statistics ---
++-------+------------------+------------------+-------------------+------------------+
+|summary|  urban_annual_pct|     urban_mom_pct|national_annual_pct|   core_annual_pct|
++-------+------------------+------------------+-------------------+------------------+
+|  count|                21|                19|                 14|                14|
+|   mean|14.204761904761906|0.9947368421052635| 12.957142857142856|12.364285714285716|
+| stddev|2.6004761468769884|0.9143751261626867|  3.480210932094222| 1.454228393265728|
+|    min|              11.7|              -0.5|               10.0|              10.0|
+|    25%|              12.5|               0.1|               10.3|              11.3|
+|    50%|              13.9|               1.3|               12.7|              12.1|
+|    75%|              14.9|               1.6|               13.4|              13.8|
+|    max|              24.0|               2.8|               23.2|              14.9|
++-------+------------------+------------------+-------------------+------------------+
+
+
+============================================================
+ Comprehensive Profiling for Table: silver.broker
+============================================================
+Total Rows: 780
+Total Columns: 5
+Exact Duplicate Rows: 0 (0.00% of data)
+Business Key: broker_id
+Null Business Key Rows: 0
+Duplicate Business Key Rows: 0
+
+--- Schema ---
+root
+ |-- broker_id: string (nullable = true)
+ |-- broker_name: string (nullable = true)
+ |-- broker_email: string (nullable = true)
+ |-- broker_phone: string (nullable = true)
+ |-- _silver_processed_at: timestamp (nullable = true)
+
+
+--- Missing Values (Nulls / NaNs / Blank Strings) ---
+-RECORD 0-------------------
+ broker_id            | 0
+ broker_name          | 0
+ broker_email         | 3
+ broker_phone         | 3
+ _silver_processed_at | 0
+
+
+--- Approximate Distinct Values Count ---
+-RECORD 0-------------------
+ broker_id            | 751
+ broker_name          | 774
+ broker_email         | 841
+ broker_phone         | 722
+ _silver_processed_at | 1
+
+
+--- Numeric Summary Statistics ---
+No numeric columns
+
+============================================================
+ Comprehensive Profiling for Table: silver.usd_egp_monthly
+============================================================
+Total Rows: 22
+Total Columns: 3
+Exact Duplicate Rows: 0 (0.00% of data)
+Business Key: year_month
+Null Business Key Rows: 0
+Duplicate Business Key Rows: 0
+
+--- Schema ---
+root
+ |-- year_month: string (nullable = true)
+ |-- usd_egp: double (nullable = true)
+ |-- _silver_processed_at: timestamp (nullable = true)
+
+
+--- Missing Values (Nulls / NaNs / Blank Strings) ---
+-RECORD 0-------------------
+ year_month           | 0
+ usd_egp              | 0
+ _silver_processed_at | 0
+
+
+--- Approximate Distinct Values Count ---
+-RECORD 0-------------------
+ year_month           | 21
+ usd_egp              | 22
+ _silver_processed_at | 1
+
+
+--- Numeric Summary Statistics ---
++-------+------------------+
+|summary|           usd_egp|
++-------+------------------+
+|  count|                22|
+|   mean| 49.94810454545455|
+| stddev|1.8464374896843065|
+|    min|           47.1717|
+|    25%|           48.2572|
+|    50%|            50.276|
+|    75%|           50.9837|
+|    max|           52.9959|
++-------+------------------+
+
+
+============================================================
+ Comprehensive Profiling for Table: silver.egypt_real_estate_listings
+============================================================
+Total Rows: 19385
+Total Columns: 15
+Exact Duplicate Rows: 0 (0.00% of data)
+Business Key: url
+Null Business Key Rows: 0
+Duplicate Business Key Rows: 0
+
+--- Schema ---
+root
+ |-- url: string (nullable = true)
+ |-- price: double (nullable = true)
+ |-- description: string (nullable = true)
+ |-- location: string (nullable = true)
+ |-- type: string (nullable = true)
+ |-- size: double (nullable = true)
+ |-- bedrooms: integer (nullable = true)
+ |-- bathrooms: integer (nullable = true)
+ |-- available_from: string (nullable = true)
+ |-- payment_method: string (nullable = true)
+ |-- down_payment: string (nullable = true)
+ |-- down_payment_egp: double (nullable = true)
+ |-- available_from_date: date (nullable = true)
+ |-- listing_year_month: string (nullable = true)
+ |-- _silver_processed_at: timestamp (nullable = true)
+
+
+--- Missing Values (Nulls / NaNs / Blank Strings) ---
+-RECORD 0---------------------
+ url                  | 0
+ price                | 0
+ description          | 1
+ location             | 0
+ type                 | 0
+ size                 | 0
+ bedrooms             | 391
+ bathrooms            | 64
+ available_from       | 548
+ payment_method       | 2
+ down_payment         | 13940
+ down_payment_egp     | 13940
+ available_from_date  | 548
+ listing_year_month   | 548
+ _silver_processed_at | 0
+
+
+--- Approximate Distinct Values Count ---
+-RECORD 0---------------------
+ url                  | 18919
+ price                | 4590
+ description          | 18486
+ location             | 1493
+ type                 | 16
+ size                 | 657
+ bedrooms             | 7
+ bathrooms            | 7
+ available_from       | 351
+ payment_method       | 2
+ down_payment         | 2101
+ down_payment_egp     | 2058
+ available_from_date  | 345
+ listing_year_month   | 34
+ _silver_processed_at | 1
+
+
+--- Silver Rule Violations ---
+-RECORD 0----------------------------
+ invalid_or_missing_price_rows | 0
+
+
+--- Numeric Summary Statistics ---
++-------+--------------------+--------------------+------------------+
+|summary|               price|                size|  down_payment_egp|
++-------+--------------------+--------------------+------------------+
+|  count|               19385|               19385|              5445|
+|   mean|1.6415306812019603E7|8.779872397674248E11|1981041.9693296603|
+| stddev|  2.36979081378249E7|1.222406125695083...| 3868577.065304119|
+|    min|            186900.0|               111.0|               1.0|
+|    25%|           6000000.0|           1356126.0|          482915.0|
+|    50%|           1.03428E7|           1830170.0|          940000.0|
+|    75%|             1.815E7|           2573239.0|         2029500.0|
+|    max|               8.4E8|1.701956361581169...|             1.5E8|
++-------+--------------------+--------------------+------------------+
+
+
+============================================================
+ Comprehensive Profiling for Table: silver.agent
+============================================================
+Total Rows: 2777
+Total Columns: 5
+Exact Duplicate Rows: 0 (0.00% of data)
+Business Key: agent_id
+Null Business Key Rows: 0
+Duplicate Business Key Rows: 0
+
+--- Schema ---
+root
+ |-- agent_id: string (nullable = true)
+ |-- agent_name: string (nullable = true)
+ |-- agent_email: string (nullable = true)
+ |-- broker_id: string (nullable = true)
+ |-- _silver_processed_at: timestamp (nullable = true)
+
+
+--- Missing Values (Nulls / NaNs / Blank Strings) ---
+-RECORD 0-------------------
+ agent_id             | 0
+ agent_name           | 3
+ agent_email          | 0
+ broker_id            | 0
+ _silver_processed_at | 0
+
+
+--- Approximate Distinct Values Count ---
+-RECORD 0--------------------
+ agent_id             | 2591
+ agent_name           | 2562
+ agent_email          | 2774
+ broker_id            | 751
+ _silver_processed_at | 1
+
+
+--- Numeric Summary Statistics ---
+No numeric columns
+
+============================================================
+ Comprehensive Profiling for Table: silver.propertyfinder_listings
+============================================================
+Total Rows: 39712
+Total Columns: 55
+Exact Duplicate Rows: 0 (0.00% of data)
+Business Key: listing_id
+Null Business Key Rows: 0
+Duplicate Business Key Rows: 0
+
+--- Schema ---
+root
+ |-- listing_id: string (nullable = true)
+ |-- internal_id: string (nullable = true)
+ |-- category: string (nullable = true)
+ |-- listing_type: string (nullable = true)
+ |-- detail_url: string (nullable = true)
+ |-- property_type: string (nullable = true)
+ |-- offering_type: string (nullable = true)
+ |-- completion_status: string (nullable = true)
+ |-- title: string (nullable = true)
+ |-- price_egp: double (nullable = true)
+ |-- price_period: string (nullable = true)
+ |-- price_currency: string (nullable = true)
+ |-- location_full: string (nullable = true)
+ |-- city: string (nullable = true)
+ |-- town: string (nullable = true)
+ |-- district: string (nullable = true)
+ |-- subdistrict: string (nullable = true)
+ |-- lat: double (nullable = true)
+ |-- lon: double (nullable = true)
+ |-- bedrooms: integer (nullable = true)
+ |-- bathrooms: integer (nullable = true)
+ |-- area_value: double (nullable = true)
+ |-- area_unit: string (nullable = true)
+ |-- furnished: string (nullable = true)
+ |-- listing_level: string (nullable = true)
+ |-- is_premium: boolean (nullable = true)
+ |-- is_verified: boolean (nullable = true)
+ |-- is_featured: boolean (nullable = true)
+ |-- is_new_construction: boolean (nullable = true)
+ |-- is_direct_from_dev: boolean (nullable = true)
+ |-- is_exclusive: boolean (nullable = true)
+ |-- listed_date: timestamp (nullable = true)
+ |-- images_count: integer (nullable = true)
+ |-- has_view_360: boolean (nullable = true)
+ |-- video_url: string (nullable = true)
+ |-- reference: string (nullable = true)
+ |-- rera: double (nullable = true)
+ |-- description: string (nullable = true)
+ |-- amenities: string (nullable = true)
+ |-- payment_method: string (nullable = true)
+ |-- agent_id: string (nullable = true)
+ |-- agent_name: string (nullable = true)
+ |-- agent_email: string (nullable = true)
+ |-- agent_is_super: boolean (nullable = true)
+ |-- agent_languages: string (nullable = true)
+ |-- broker_id: string (nullable = true)
+ |-- broker_name: string (nullable = true)
+ |-- broker_email: string (nullable = true)
+ |-- broker_phone: string (nullable = true)
+ |-- contact_phone: string (nullable = true)
+ |-- contact_whatsapp: string (nullable = true)
+ |-- contact_email: string (nullable = true)
+ |-- scraped_at: timestamp (nullable = true)
+ |-- listing_year_month: string (nullable = true)
+ |-- _silver_processed_at: timestamp (nullable = true)
+
+
+--- Missing Values (Nulls / NaNs / Blank Strings) ---
+-RECORD 0---------------------
+ listing_id           | 0
+ internal_id          | 0
+ category             | 0
+ listing_type         | 0
+ detail_url           | 0
+ property_type        | 0
+ offering_type        | 0
+ completion_status    | 19949
+ title                | 0
+ price_egp            | 0
+ price_period         | 0
+ price_currency       | 0
+ location_full        | 0
+ city                 | 0
+ town                 | 0
+ district             | 346
+ subdistrict          | 6758
+ lat                  | 0
+ lon                  | 0
+ bedrooms             | 1159
+ bathrooms            | 37
+ area_value           | 0
+ area_unit            | 0
+ furnished            | 8384
+ listing_level        | 0
+ is_premium           | 0
+ is_verified          | 0
+ is_featured          | 0
+ is_new_construction  | 0
+ is_direct_from_dev   | 0
+ is_exclusive         | 0
+ listed_date          | 0
+ images_count         | 0
+ has_view_360         | 0
+ video_url            | 39510
+ reference            | 0
+ rera                 | 39712
+ description          | 0
+ amenities            | 32
+ payment_method       | 19773
+ agent_id             | 0
+ agent_name           | 7
+ agent_email          | 0
+ agent_is_super       | 0
+ agent_languages      | 30540
+ broker_id            | 0
+ broker_name          | 0
+ broker_email         | 202
+ broker_phone         | 202
+ contact_phone        | 0
+ contact_whatsapp     | 0
+ contact_email        | 0
+ scraped_at           | 0
+ listing_year_month   | 0
+ _silver_processed_at | 0
+
+
+--- Approximate Distinct Values Count ---
+-RECORD 0---------------------
+ listing_id           | 41867
+ internal_id          | 41527
+ category             | 2
+ listing_type         | 1
+ detail_url           | 37802
+ property_type        | 18
+ offering_type        | 2
+ completion_status    | 4
+ title                | 34903
+ price_egp            | 5031
+ price_period         | 2
+ price_currency       | 1
+ location_full        | 2014
+ city                 | 12
+ town                 | 67
+ district             | 494
+ subdistrict          | 1212
+ lat                  | 1774
+ lon                  | 1838
+ bedrooms             | 7
+ bathrooms            | 7
+ area_value           | 734
+ area_unit            | 1
+ furnished            | 3
+ listing_level        | 3
+ is_premium           | 2
+ is_verified          | 1
+ is_featured          | 2
+ is_new_construction  | 1
+ is_direct_from_dev   | 1
+ is_exclusive         | 1
+ listed_date          | 36725
+ images_count         | 31
+ has_view_360         | 2
+ video_url            | 155
+ reference            | 38957
+ rera                 | 0
+ description          | 38433
+ amenities            | 17607
+ payment_method       | 3
+ agent_id             | 2589
+ agent_name           | 2562
+ agent_email          | 2756
+ agent_is_super       | 1
+ agent_languages      | 31
+ broker_id            | 751
+ broker_name          | 765
+ broker_email         | 831
+ broker_phone         | 718
+ contact_phone        | 2473
+ contact_whatsapp     | 440
+ contact_email        | 2756
+ scraped_at           | 5103
+ listing_year_month   | 21
+ _silver_processed_at | 1
+
+
+--- Silver Rule Violations ---
+-RECORD 0----------------------------
+ invalid_or_missing_price_rows | 0
+ invalid_area_rows             | 0
+ invalid_lat_rows              | 0
+ invalid_lon_rows              | 0
+
+
+--- Numeric Summary Statistics ---
++-------+------------------+------------------+------------------+------------------+----+
+|summary|         price_egp|               lat|               lon|        area_value|rera|
++-------+------------------+------------------+------------------+------------------+----+
+|  count|             39712|             39712|             39712|             39712|   0|
+|   mean|1493863.2731979177| 29.97641938358041|31.318190561293786|218.48322925060435|NULL|
+| stddev|2680750.9708386553|0.6025312208761594|0.8573513961720637| 781.8238667093334|NULL|
+|    min|       1.001490928|25.069366455078125| 25.47613525390625|               1.0|NULL|
+|    25%|           20000.0| 30.00199317932129| 31.01556968688965|             130.0|NULL|
+|    50%|           70000.0| 30.02500343322754| 31.49715614318848|             175.0|NULL|
+|    75%|         1500000.0| 30.06147003173828|31.546247482299805|             245.0|NULL|
+|    max|         9999000.0|31.497467041015625| 34.89657211303711|           96600.0|NULL|
++-------+------------------+------------------+------------------+------------------+----+
+
+
+============================================================
+ Comprehensive Profiling for Table: silver.listing_amenity
+============================================================
+Total Rows: 4128604
+Total Columns: 3
+Exact Duplicate Rows: skipped for large table; business-key duplicates are checked below
+Business Key: listing_id, amenity
+Null Business Key Rows: 0
+Duplicate Business Key Rows: 0
+
+--- Schema ---
+root
+ |-- listing_id: string (nullable = true)
+ |-- amenity: string (nullable = true)
+ |-- _silver_processed_at: timestamp (nullable = true)
+
+
+--- Missing Values (Nulls / NaNs / Blank Strings) ---
+-RECORD 0-------------------
+ listing_id           | 0
+ amenity              | 0
+ _silver_processed_at | 0
+
+
+--- Approximate Distinct Values Count ---
+-RECORD 0-----------------------
+ listing_id           | 1060231
+ amenity              | 24
+ _silver_processed_at | 1
+
+
+--- Numeric Summary Statistics ---
+No numeric columns
+
+============================================================
+ Comprehensive Profiling for Table: silver.listings_stream
+============================================================
+Total Rows: 940962
+Total Columns: 56
+Exact Duplicate Rows: skipped for large table; business-key duplicates are checked below
+Business Key: listing_id
+Null Business Key Rows: 0
+Duplicate Business Key Rows: 0
+
+--- Schema ---
+root
+ |-- listing_id: string (nullable = true)
+ |-- internal_id: string (nullable = true)
+ |-- category: string (nullable = true)
+ |-- listing_type: string (nullable = true)
+ |-- detail_url: string (nullable = true)
+ |-- property_type: string (nullable = true)
+ |-- offering_type: string (nullable = true)
+ |-- completion_status: string (nullable = true)
+ |-- title: string (nullable = true)
+ |-- price_egp: double (nullable = true)
+ |-- price_period: string (nullable = true)
+ |-- price_currency: string (nullable = true)
+ |-- location_full: string (nullable = true)
+ |-- city: string (nullable = true)
+ |-- town: string (nullable = true)
+ |-- district: string (nullable = true)
+ |-- subdistrict: string (nullable = true)
+ |-- lat: double (nullable = true)
+ |-- lon: double (nullable = true)
+ |-- bedrooms: integer (nullable = true)
+ |-- bathrooms: integer (nullable = true)
+ |-- area_value: double (nullable = true)
+ |-- area_unit: string (nullable = true)
+ |-- furnished: string (nullable = true)
+ |-- listing_level: string (nullable = true)
+ |-- is_premium: boolean (nullable = true)
+ |-- is_verified: boolean (nullable = true)
+ |-- is_featured: boolean (nullable = true)
+ |-- is_new_construction: boolean (nullable = true)
+ |-- is_direct_from_dev: boolean (nullable = true)
+ |-- is_exclusive: boolean (nullable = true)
+ |-- listed_date: timestamp (nullable = true)
+ |-- images_count: integer (nullable = true)
+ |-- has_view_360: boolean (nullable = true)
+ |-- video_url: string (nullable = true)
+ |-- reference: string (nullable = true)
+ |-- rera: string (nullable = true)
+ |-- description: string (nullable = true)
+ |-- amenities: string (nullable = true)
+ |-- payment_method: string (nullable = true)
+ |-- agent_id: string (nullable = true)
+ |-- agent_name: string (nullable = true)
+ |-- agent_email: string (nullable = true)
+ |-- agent_is_super: boolean (nullable = true)
+ |-- agent_languages: string (nullable = true)
+ |-- broker_id: string (nullable = true)
+ |-- broker_name: string (nullable = true)
+ |-- broker_email: string (nullable = true)
+ |-- broker_phone: string (nullable = true)
+ |-- contact_phone: string (nullable = true)
+ |-- contact_whatsapp: string (nullable = true)
+ |-- contact_email: string (nullable = true)
+ |-- scraped_at: timestamp (nullable = true)
+ |-- _ingested_at: timestamp (nullable = true)
+ |-- listing_year_month: string (nullable = true)
+ |-- _silver_processed_at: timestamp (nullable = true)
+
+
+--- Missing Values (Nulls / NaNs / Blank Strings) ---
+-RECORD 0----------------------
+ listing_id           | 0
+ internal_id          | 0
+ category             | 0
+ listing_type         | 0
+ detail_url           | 0
+ property_type        | 0
+ offering_type        | 0
+ completion_status    | 0
+ title                | 0
+ price_egp            | 0
+ price_period         | 0
+ price_currency       | 0
+ location_full        | 0
+ city                 | 0
+ town                 | 0
+ district             | 0
+ subdistrict          | 0
+ lat                  | 0
+ lon                  | 0
+ bedrooms             | 18512
+ bathrooms            | 0
+ area_value           | 28420
+ area_unit            | 0
+ furnished            | 0
+ listing_level        | 0
+ is_premium           | 0
+ is_verified          | 0
+ is_featured          | 0
+ is_new_construction  | 0
+ is_direct_from_dev   | 0
+ is_exclusive         | 0
+ listed_date          | 18362
+ images_count         | 0
+ has_view_360         | 0
+ video_url            | 705492
+ reference            | 0
+ rera                 | 940962
+ description          | 0
+ amenities            | 0
+ payment_method       | 0
+ agent_id             | 0
+ agent_name           | 0
+ agent_email          | 46912
+ agent_is_super       | 0
+ agent_languages      | 0
+ broker_id            | 0
+ broker_name          | 0
+ broker_email         | 0
+ broker_phone         | 0
+ contact_phone        | 0
+ contact_whatsapp     | 0
+ contact_email        | 0
+ scraped_at           | 0
+ _ingested_at         | 0
+ listing_year_month   | 0
+ _silver_processed_at | 0
+
+
+--- Approximate Distinct Values Count ---
+-RECORD 0-----------------------
+ listing_id           | 1027642
+ internal_id          | 851154
+ category             | 2
+ listing_type         | 2
+ detail_url           | 930321
+ property_type        | 11
+ offering_type        | 2
+ completion_status    | 3
+ title                | 291
+ price_egp            | 57716
+ price_period         | 2
+ price_currency       | 1
+ location_full        | 13
+ city                 | 6
+ town                 | 8
+ district             | 12
+ subdistrict          | 13
+ lat                  | 309615
+ lon                  | 386727
+ bedrooms             | 13
+ bathrooms            | 9
+ area_value           | 955029
+ area_unit            | 1
+ furnished            | 3
+ listing_level        | 3
+ is_premium           | 2
+ is_verified          | 2
+ is_featured          | 2
+ is_new_construction  | 2
+ is_direct_from_dev   | 2
+ is_exclusive         | 2
+ listed_date          | 1754
+ images_count         | 20
+ has_view_360         | 2
+ video_url            | 1
+ reference            | 607958
+ rera                 | 0
+ description          | 133
+ amenities            | 4
+ payment_method       | 3
+ agent_id             | 4
+ agent_name           | 4
+ agent_email          | 4
+ agent_is_super       | 2
+ agent_languages      | 3
+ broker_id            | 4
+ broker_name          | 4
+ broker_email         | 4
+ broker_phone         | 4
+ contact_phone        | 4
+ contact_whatsapp     | 4
+ contact_email        | 4
+ scraped_at           | 974631
+ _ingested_at         | 5205
+ listing_year_month   | 64
+ _silver_processed_at | 1
+
+
+--- Silver Rule Violations ---
+-RECORD 0----------------------------
+ invalid_or_missing_price_rows | 0
+ invalid_area_rows             | 0
+ invalid_lat_rows              | 0
+ invalid_lon_rows              | 0
+
+
+--- Numeric Summary Statistics ---
++-------+--------------------+------------------+------------------+------------------+
+|summary|           price_egp|               lat|               lon|        area_value|
++-------+--------------------+------------------+------------------+------------------+
+|  count|              940962|            940962|            940962|            912542|
+|   mean| 6.346194000278439E7|30.051679084597634|30.863904975113154|258.60809448034627|
+| stddev|1.0483794564649893E9|0.8922247626724404|1.3333680379583164| 147.0216421448201|
+|    min|              6900.0|             27.37|             27.83| 75.00064064392542|
+|    25%|           3253000.0|         29.964696|         30.839717| 149.6796114969805|
+|    50%|           8237000.0|         30.043842|         30.980201|223.63681253829424|
+|    75%|             1.568E7|          30.08046|         31.480099|308.55807636334356|
+|    max|           6.4427E10|         31.229999|             33.69| 649.9980826235412|
++-------+--------------------+------------------+------------------+------------------+
 
