@@ -62,6 +62,11 @@ services:
     volumes:
       - pgdata:/var/lib/postgresql/data
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d realestate"]
+      interval: 5s
+      timeout: 5s
+      retries: 12
 
   producer:
     image: python:3.11-slim
@@ -89,6 +94,45 @@ services:
     volumes:
       - ./dbt_project:/usr/app
       - ./dbt_project/profiles:/root/.dbt
+
+  airflow:
+    build:
+      context: ./airflow
+    container_name: airflow
+    command: standalone
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+      airflow-init:
+        condition: service_completed_successfully
+    ports:
+      - "8081:8080"
+    environment:
+      AIRFLOW__CORE__EXECUTOR: SequentialExecutor
+      AIRFLOW__CORE__LOAD_EXAMPLES: "false"
+      AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: "false"
+      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: sqlite:////opt/airflow/metadata/airflow.db
+    volumes:
+      - ./airflow/dags:/opt/airflow/dags
+      - ./:/app
+      - airflow_metadata:/opt/airflow/metadata
+      - airflow_logs:/opt/airflow/logs
+
+  airflow-init:
+    build:
+      context: ./airflow
+    user: "0:0"
+    entrypoint: /bin/bash
+    command:
+      - -c
+      - mkdir -p /opt/airflow/metadata /opt/airflow/logs && chown -R 50000:0 /opt/airflow/metadata /opt/airflow/logs
+    restart: "no"
+    volumes:
+      - airflow_metadata:/opt/airflow/metadata
+      - airflow_logs:/opt/airflow/logs
 volumes:
   pgdata:
   kafkadata:
+  airflow_metadata:
+  airflow_logs:
