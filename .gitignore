@@ -12,3 +12,20 @@ streaming_project/spark_log.txt
 streaming_project/ivy/
 streaming_project/state/
 spark_log.txt
+
+# Airflow
+streaming_project/airflow/logs/
+streaming_project/airflow/*.pid
+streaming_project/airflow/airflow.cfg
+streaming_project/airflow/airflow.db
+streaming_project/airflow/webserver_config.py
+
+# dbt 
+**/dbt_packages/
+**/target/
+**/logs/
+
+# Python / editors
+*.pyc
+.venv/
+.vscode/

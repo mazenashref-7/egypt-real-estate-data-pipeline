@@ -1,7 +1,9 @@
-﻿from pyspark.sql import SparkSession
+﻿import sys
+from pyspark.sql import SparkSession
 from pyspark.sql.functions import (
-    col, trim, initcap, lower, current_timestamp,
-    regexp_replace, when, coalesce, to_timestamp, date_format
+    col, lit, trim, initcap, lower, current_timestamp,
+    regexp_replace, when, coalesce, to_timestamp, date_format,
+    max as spark_max
 )
 from pyspark.sql.types import DoubleType, IntegerType, BooleanType, StringType
 
@@ -18,6 +20,9 @@ db_properties = {
     "driver": "org.postgresql.Driver"
 }
 
+BRONZE_TABLE = "bronze.raw_listings_stream"
+SILVER_TABLE = "silver.listings_stream"
+
 SKIP_INITCAP = [
     "url", "link", "image", "video", "description", "email",
     "id", "date", "month", "phone", "whatsapp", "reference", "code", "rera"
@@ -29,9 +34,37 @@ BOOL_COLS = [
 ]
 INT_COLS = ["bedrooms", "bathrooms", "images_count"]
 
-df = spark.read.jdbc(db_url, "bronze.raw_listings_stream", properties=db_properties)
+# ---------------------------------------------------------------
+# Incremental logic: find the last _ingested_at already in silver
+# ---------------------------------------------------------------
+try:
+    last_ts = (spark.read.jdbc(db_url, SILVER_TABLE, properties=db_properties)
+               .agg(spark_max("_ingested_at")).collect()[0][0])
+except Exception:
+    last_ts = None  # silver table does not exist yet -> initial load
+
+df = spark.read.jdbc(db_url, BRONZE_TABLE, properties=db_properties)
+
+if last_ts is None:
+    write_mode = "overwrite"   # initial load
+    print("Mode: INITIAL load (full)")
+else:
+    write_mode = "append"      # incremental load
+    df = df.filter(col("_ingested_at") > lit(last_ts))
+    print(f"Mode: INCREMENTAL load (rows after {last_ts})")
+
+df = df.cache()
 initial_count = df.count()
 
+if initial_count == 0:
+    print("No new rows, nothing to do")
+    df.unpersist()
+    spark.stop()
+    sys.exit(0)
+
+# ---------------------------------------------------------------
+# Cleaning (unchanged)
+# ---------------------------------------------------------------
 if "listing_id" in df.columns:
     df = df.dropDuplicates(["listing_id"])
 
@@ -115,7 +148,10 @@ if "area_value" in df.columns:
 df = df.withColumn("_silver_processed_at", current_timestamp()).cache()
 final_count = df.count()
 
-df.write.jdbc(db_url, "silver.listings_stream", mode="overwrite", properties=db_properties)
+# ---------------------------------------------------------------
+# Write: overwrite on first run, append afterwards
+# ---------------------------------------------------------------
+df.write.jdbc(db_url, SILVER_TABLE, mode=write_mode, properties=db_properties)
 df.unpersist()
 spark.stop()
-print(f"✅ Done silver.listings_stream: {initial_count} -> {final_count}")
+print(f"✅ Done {SILVER_TABLE} ({write_mode}): {initial_count} -> {final_count}")

@@ -21,8 +21,8 @@ engine = create_engine(url)
 tables = {
     "raw_propertyfinder": RAW_PATH / "propertyfinder.csv",
     "raw_egypt_real_estate_listings": RAW_PATH / "egypt_real_estate_listings.csv",
-    "raw_usd_egp_monthly": RAW_PATH / "usd_egp_monthly.csv",
-    "raw_egypt_inflation_monthly_2025_2026": RAW_PATH / "egypt_inflation_monthly_2025_2026.csv",
+    "raw_usd_egp_monthly": RAW_PATH / "usd_egp_monthly_2021_2026.csv",
+    "raw_egypt_inflation_monthly_2021_2026": RAW_PATH / "egypt_inflation_monthly_2021_2026.csv",
     "raw_egypt_locations": RAW_PATH / "egypt_locations.csv",
 }
 

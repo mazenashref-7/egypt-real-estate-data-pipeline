@@ -35,7 +35,7 @@ def n(c):
 
 df = read("silver.propertyfinder_listings", "propertyfinder") \
     .unionByName(read("silver.listings_stream", "listings_stream"), allowMissingColumns=True)
-
+df = df.withColumn("completion_status", coalesce(col("completion_status"), col("completion_stats"))).drop("completion_stats")
 for c in ["agent_id", "broker_id"]:
     df = df.withColumn(c, regexp_replace(col(c).cast("string"), r"\.0$", ""))
 
@@ -65,9 +65,10 @@ listing_amenity = df.select("listing_id", explode(split(col("amenities"), ",")).
     .filter(col("amenity") != "") \
     .dropDuplicates(["listing_id", "amenity"])
 
-listing = listing = df.drop("city", "town", "district", "subdistrict", "category", "property_type",
+listing = df.drop("city", "town", "district", "subdistrict", "category", "property_type",
                   "offering_type", "agent_name", "agent_email", "broker_id", "broker_name",
-                  "broker_email", "broker_phone", "amenities") \
+                  "broker_email", "broker_phone", "amenities",
+                  "price_currency", "area_unit", "listing_year_month") \
             .withColumn("year_month", date_format(col("listed_date"), "yyyy-MM"))
 
 write(location, "silver.location")

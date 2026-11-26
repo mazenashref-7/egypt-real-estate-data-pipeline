@@ -173,7 +173,7 @@ root
 ============================================================
  Comprehensive Profiling for Table: bronze.raw_listings_stream 
 ============================================================
-Total Rows: 189160
+Total Rows: 12800
 Total Columns: 54
 Duplicate Rows: 0 (0.00% of data)
 
@@ -186,7 +186,7 @@ root
  |-- detail_url: string (nullable = true)
  |-- property_type: string (nullable = true)
  |-- offering_type: string (nullable = true)
- |-- completion_status: string (nullable = true)
+ |-- completion_stats: string (nullable = true)
  |-- title: string (nullable = true)
  |-- price_egp: string (nullable = true)
  |-- price_period: string (nullable = true)
@@ -236,134 +236,134 @@ root
 
 
 --- Missing Values (Nulls / NaNs) ---
--RECORD 0---------------------
- listing_id          | 0      
- internal_id         | 0      
- category            | 0      
- listing_type        | 0      
- detail_url          | 0      
- property_type       | 0      
- offering_type       | 0      
- completion_status   | 0      
- title               | 0      
- price_egp           | 7554   
- price_period        | 0      
- price_currency      | 0      
- location_full       | 0      
- city                | 0      
- town                | 0      
- district            | 0      
- subdistrict         | 0      
- lat                 | 0      
- lon                 | 0      
- bedrooms            | 3736   
- bathrooms           | 0      
- area_value          | 5604   
- area_unit           | 0      
- furnished           | 0      
- listing_level       | 0      
- is_premium          | 0      
- is_verified         | 0      
- is_featured         | 0      
- is_new_construction | 0      
- is_direct_from_dev  | 0      
- is_exclusive        | 0      
- listed_date         | 0      
- images_count        | 0      
- has_view_360        | 0      
- video_url           | 142019 
- reference           | 0      
- rera                | 189360 
- description         | 0      
- amenities           | 0      
- payment_method      | 0      
- agent_id            | 0      
- agent_name          | 0      
- agent_email         | 9360   
- agent_is_super      | 0      
- agent_languages     | 0      
- broker_id           | 0      
- broker_name         | 0      
- broker_email        | 0      
- broker_phone        | 0      
- contact_phone       | 0      
- contact_whatsapp    | 0      
- contact_email       | 0      
- scraped_at          | 0      
- _ingested_at        | 0      
+-RECORD 0--------------------
+ listing_id          | 0     
+ internal_id         | 0     
+ category            | 0     
+ listing_type        | 0     
+ detail_url          | 0     
+ property_type       | 0     
+ offering_type       | 0     
+ completion_stats    | 0     
+ title               | 0     
+ price_egp           | 0     
+ price_period        | 0     
+ price_currency      | 0     
+ location_full       | 0     
+ city                | 0     
+ town                | 0     
+ district            | 0     
+ subdistrict         | 0     
+ lat                 | 0     
+ lon                 | 0     
+ bedrooms            | 0     
+ bathrooms           | 0     
+ area_value          | 0     
+ area_unit           | 0     
+ furnished           | 0     
+ listing_level       | 0     
+ is_premium          | 0     
+ is_verified         | 0     
+ is_featured         | 0     
+ is_new_construction | 0     
+ is_direct_from_dev  | 0     
+ is_exclusive        | 0     
+ listed_date         | 0     
+ images_count        | 0     
+ has_view_360        | 0     
+ video_url           | 9561  
+ reference           | 0     
+ rera                | 12800 
+ description         | 0     
+ amenities           | 0     
+ payment_method      | 0     
+ agent_id            | 0     
+ agent_name          | 0     
+ agent_email         | 0     
+ agent_is_super      | 0     
+ agent_languages     | 0     
+ broker_id           | 0     
+ broker_name         | 0     
+ broker_email        | 0     
+ broker_phone        | 0     
+ contact_phone       | 0     
+ contact_whatsapp    | 0     
+ contact_email       | 0     
+ scraped_at          | 0     
+ _ingested_at        | 0     
 
 
 --- Distinct Values Count ---
--RECORD 0---------------------
- listing_id          | 189360 
- internal_id         | 189360 
- category            | 2      
- listing_type        | 2      
- detail_url          | 189360 
- property_type       | 11     
- offering_type       | 2      
- completion_status   | 3      
- title               | 286    
- price_egp           | 41055  
- price_period        | 2      
- price_currency      | 1      
- location_full       | 13     
- city                | 11     
- town                | 8      
- district            | 12     
- subdistrict         | 13     
- lat                 | 134686 
- lon                 | 153091 
- bedrooms            | 13     
- bathrooms           | 9      
- area_value          | 181867 
- area_unit           | 1      
- furnished           | 3      
- listing_level       | 3      
- is_premium          | 2      
- is_verified         | 2      
- is_featured         | 2      
- is_new_construction | 2      
- is_direct_from_dev  | 2      
- is_exclusive        | 2      
- listed_date         | 3563   
- images_count        | 20     
- has_view_360        | 2      
- video_url           | 1      
- reference           | 170794 
- rera                | 0      
- description         | 143    
- amenities           | 4      
- payment_method      | 3      
- agent_id            | 4      
- agent_name          | 4      
- agent_email         | 4      
- agent_is_super      | 2      
- agent_languages     | 3      
- broker_id           | 4      
- broker_name         | 4      
- broker_email        | 4      
- broker_phone        | 4      
- contact_phone       | 4      
- contact_whatsapp    | 4      
- contact_email       | 4      
- scraped_at          | 189240 
- _ingested_at        | 905    
+-RECORD 0--------------------
+ listing_id          | 12800 
+ internal_id         | 12800 
+ category            | 2     
+ listing_type        | 2     
+ detail_url          | 12800 
+ property_type       | 11    
+ offering_type       | 2     
+ completion_stats    | 3     
+ title               | 283   
+ price_egp           | 10152 
+ price_period        | 2     
+ price_currency      | 1     
+ location_full       | 13    
+ city                | 5     
+ town                | 8     
+ district            | 12    
+ subdistrict         | 13    
+ lat                 | 12452 
+ lon                 | 12601 
+ bedrooms            | 13    
+ bathrooms           | 9     
+ area_value          | 575   
+ area_unit           | 1     
+ furnished           | 3     
+ listing_level       | 3     
+ is_premium          | 2     
+ is_verified         | 2     
+ is_featured         | 2     
+ is_new_construction | 2     
+ is_direct_from_dev  | 2     
+ is_exclusive        | 2     
+ listed_date         | 1824  
+ images_count        | 20    
+ has_view_360        | 2     
+ video_url           | 1     
+ reference           | 12700 
+ rera                | 0     
+ description         | 143   
+ amenities           | 4     
+ payment_method      | 3     
+ agent_id            | 4     
+ agent_name          | 4     
+ agent_email         | 4     
+ agent_is_super      | 2     
+ agent_languages     | 3     
+ broker_id           | 4     
+ broker_name         | 4     
+ broker_email        | 4     
+ broker_phone        | 4     
+ contact_phone       | 4     
+ contact_whatsapp    | 4     
+ contact_email       | 4     
+ scraped_at          | 11860 
+ _ingested_at        | 32    
 
 
 --- Comprehensive Summary Statistics ---
-+-------+--------------+------------------+-----------+------------+--------------------+-------------+-------------+------------------+--------------------+--------------------+------------+--------------+--------------------+----------+--------------+--------+------------+------------------+------------------+------------------+------------------+------------------+---------+---------------+-------------+----------+-----------+-----------+-------------------+------------------+------------+-----------+-----------------+------------+--------------------+----------+----+--------------------+--------------------+--------------+--------+------------+--------------------+--------------+--------------------+---------+--------------------+----------------+--------------------+--------------------+--------------------+----------------+--------------------+
-|summary|    listing_id|       internal_id|   category|listing_type|          detail_url|property_type|offering_type| completion_status|               title|           price_egp|price_period|price_currency|       location_full|      city|          town|district| subdistrict|               lat|               lon|          bedrooms|         bathrooms|        area_value|area_unit|      furnished|listing_level|is_premium|is_verified|is_featured|is_new_construction|is_direct_from_dev|is_exclusive|listed_date|     images_count|has_view_360|           video_url| reference|rera|         description|           amenities|payment_method|agent_id|  agent_name|         agent_email|agent_is_super|     agent_languages|broker_id|         broker_name|    broker_email|        broker_phone|       contact_phone|    contact_whatsapp|   contact_email|          scraped_at|
-+-------+--------------+------------------+-----------+------------+--------------------+-------------+-------------+------------------+--------------------+--------------------+------------+--------------+--------------------+----------+--------------+--------+------------+------------------+------------------+------------------+------------------+------------------+---------+---------------+-------------+----------+-----------+-----------+-------------------+------------------+------------+-----------+-----------------+------------+--------------------+----------+----+--------------------+--------------------+--------------+--------+------------+--------------------+--------------+--------------------+---------+--------------------+----------------+--------------------+--------------------+--------------------+----------------+--------------------+
-|  count|        189760|            189760|     189760|      189760|              189760|       189760|       189760|            189760|              189760|              182191|      189760|        189760|              189760|    189760|        189760|  189760|      189760|            189760|            189760|            186020|            189760|            184140|   189760|         189760|       189760|    189760|     189760|     189760|             189760|            189760|      189760|     189760|           189760|      189760|               47430|    189760|   0|              189760|              189760|        189760|  189760|      189760|              180387|        189760|              189760|   189760|              189760|          189760|              189760|              189760|              189760|          189760|              189760|
-|   mean|          NULL|         1094879.5|       NULL|        NULL|                NULL|         NULL|         NULL|              NULL|                NULL|  6.21606724821753E7|        NULL|          NULL|                NULL|      NULL|          NULL|    NULL|        NULL|30.050905655417857| 30.86372711413905|3.8340877325018816|3.0253794266441822|256.02919731515357|     NULL|           NULL|         NULL|      NULL|       NULL|       NULL|               NULL|              NULL|        NULL|       NULL|14.49195826306914|        NULL|                NULL|      NULL|NULL|                NULL|                NULL|          NULL|    NULL|        NULL|                NULL|          NULL|                NULL|     NULL|                NULL|            NULL|2.010058406650590...|2.010058406650590...|2.010058406650590...|            NULL|                NULL|
-| stddev|          NULL|54779.137878095244|       NULL|        NULL|                NULL|         NULL|         NULL|              NULL|                NULL|1.0538385844882894E9|        NULL|          NULL|                NULL|      NULL|          NULL|    NULL|        NULL|0.8928671685850187|1.3340700784458894|3.0786224133364035|2.1762851024303194|148.41198299101313|     NULL|           NULL|         NULL|      NULL|       NULL|       NULL|               NULL|              NULL|        NULL|       NULL|5.766662830788128|        NULL|                NULL|      NULL|NULL|                NULL|                NULL|          NULL|    NULL|        NULL|                NULL|          NULL|                NULL|     NULL|                NULL|            NULL|  3370031.0792823797|  3370031.0792823797|  3370031.0792823797|            NULL|                NULL|
-|    min|PF-EGY-1000000|           1000000| Commercial|         buy|https://www.prope...|    Apartment|           RR|          off_plan|Apartment for Ren...|         -10010000.0|     monthly|           EGP|Allegria, Distric...|Alexandria|6th of October|   Degla|    Allegria|         27.370002|         27.830009|               0.0|               1.0|               0.0|      sqm|fully_furnished|     featured|     False|      False|      False|              False|             False|       False| 01/01/2021|               10|       False|https://www.youtu...|REF-100000|NULL|Spacious Apartmen...|Balcony, Security...|          Cash|  AG-101| Mohamed Ali| m.ali@realestate.eg|         False|              Arabic|   BRK-50|Coldwell Banker E...|contact@remax.eg|       +201001112233|       +201001112233|       +201001112233|contact@remax.eg|2020-12-22T12:30:08Z|
-|    25%|          NULL|         1047421.0|       NULL|        NULL|                NULL|         NULL|         NULL|              NULL|                NULL|           3037000.0|        NULL|          NULL|                NULL|      NULL|          NULL|    NULL|        NULL|         29.964427|         30.839628|               1.0|               1.0| 147.6486159460438|     NULL|           NULL|         NULL|      NULL|       NULL|       NULL|               NULL|              NULL|        NULL|       NULL|              9.0|        NULL|                NULL|      NULL|NULL|                NULL|                NULL|          NULL|    NULL|        NULL|                NULL|          NULL|                NULL|     NULL|                NULL|            NULL|    2.01004445566E11|    2.01004445566E11|    2.01004445566E11|            NULL|                NULL|
-|    50%|          NULL|         1094868.0|       NULL|        NULL|                NULL|         NULL|         NULL|              NULL|                NULL|           8104000.0|        NULL|          NULL|                NULL|      NULL|          NULL|    NULL|        NULL|         30.043799|         30.979248|               3.0|               2.0|222.37666212397238|     NULL|           NULL|         NULL|      NULL|       NULL|       NULL|               NULL|              NULL|        NULL|       NULL|             14.0|        NULL|                NULL|      NULL|NULL|                NULL|                NULL|          NULL|    NULL|        NULL|                NULL|          NULL|                NULL|     NULL|                NULL|            NULL|    2.01007778899E11|    2.01007778899E11|    2.01007778899E11|            NULL|                NULL|
-|    75%|          NULL|         1142300.0|       NULL|        NULL|                NULL|         NULL|         NULL|              NULL|                NULL|            1.5601E7|        NULL|          NULL|                NULL|      NULL|          NULL|    NULL|        NULL|         30.080557|         31.480127|               5.0|               4.0|306.34173589203203|     NULL|           NULL|         NULL|      NULL|       NULL|       NULL|               NULL|              NULL|        NULL|       NULL|             20.0|        NULL|                NULL|      NULL|NULL|                NULL|                NULL|          NULL|    NULL|        NULL|                NULL|          NULL|                NULL|     NULL|                NULL|            NULL|        2.0100999E11|        2.0100999E11|        2.0100999E11|            NULL|                NULL|
-|    max|PF-EGY-1189759|           1189759|Residential|        rent|https://www.prope...|    Warehouse|           RS|under_construction|Warehouse for Sal...|           9999000.0|    one_time|           EGP|Tiba Gardens, Zon...|      giza|        Smouha|  Zone 8|Tiba Gardens|         31.229996|             33.69|               9.0|               9.0| 99.99929498316854|      sqm|    unfurnished|     standard|      True|       True|       True|               True|              True|        True| 31/12/2024|                9|        True|https://www.youtu...|REF-999997|NULL|Spacious Warehous...|Security, Concier...|  Installments|  AG-104|Sarah Hassan|s.hassan@realesta...|          True|Arabic, English, ...|   BRK-53|        RE/MAX Egypt|support@nawy.com|       +201009990000|       +201009990000|       +201009990000|support@nawy.com|2026-01-29T18:19:21Z|
-+-------+--------------+------------------+-----------+------------+--------------------+-------------+-------------+------------------+--------------------+--------------------+------------+--------------+--------------------+----------+--------------+--------+------------+------------------+------------------+------------------+------------------+------------------+---------+---------------+-------------+----------+-----------+-----------+-------------------+------------------+------------+-----------+-----------------+------------+--------------------+----------+----+--------------------+--------------------+--------------+--------+------------+--------------------+--------------+--------------------+---------+--------------------+----------------+--------------------+--------------------+--------------------+----------------+--------------------+
++-------+--------------+------------------+-----------+------------+--------------------+-------------+-------------+------------------+--------------------+-------------------+------------+--------------+--------------------+----------+--------------+--------+------------+------------------+------------------+-----------------+------------------+------------------+---------+---------------+-------------+----------+-----------+-----------+-------------------+------------------+------------+-----------+-----------------+------------+--------------------+----------+----+--------------------+--------------------+--------------+--------+------------+--------------------+--------------+--------------------+---------+--------------------+----------------+--------------------+--------------------+--------------------+----------------+--------------------+
+|summary|    listing_id|       internal_id|   category|listing_type|          detail_url|property_type|offering_type|  completion_stats|               title|          price_egp|price_period|price_currency|       location_full|      city|          town|district| subdistrict|               lat|               lon|         bedrooms|         bathrooms|        area_value|area_unit|      furnished|listing_level|is_premium|is_verified|is_featured|is_new_construction|is_direct_from_dev|is_exclusive|listed_date|     images_count|has_view_360|           video_url| reference|rera|         description|           amenities|payment_method|agent_id|  agent_name|         agent_email|agent_is_super|     agent_languages|broker_id|         broker_name|    broker_email|        broker_phone|       contact_phone|    contact_whatsapp|   contact_email|          scraped_at|
++-------+--------------+------------------+-----------+------------+--------------------+-------------+-------------+------------------+--------------------+-------------------+------------+--------------+--------------------+----------+--------------+--------+------------+------------------+------------------+-----------------+------------------+------------------+---------+---------------+-------------+----------+-----------+-----------+-------------------+------------------+------------+-----------+-----------------+------------+--------------------+----------+----+--------------------+--------------------+--------------+--------+------------+--------------------+--------------+--------------------+---------+--------------------+----------------+--------------------+--------------------+--------------------+----------------+--------------------+
+|  count|         12800|             12800|      12800|       12800|               12800|        12800|        12800|             12800|               12800|              12800|       12800|         12800|               12800|     12800|         12800|   12800|       12800|             12800|             12800|            12800|             12800|             12800|    12800|          12800|        12800|     12800|      12800|      12800|              12800|             12800|       12800|      12800|            12800|       12800|                3239|     12800|   0|               12800|               12800|         12800|   12800|       12800|               12800|         12800|               12800|    12800|               12800|           12800|               12800|               12800|               12800|           12800|               12800|
+|   mean|          NULL|         1006399.5|       NULL|        NULL|                NULL|         NULL|         NULL|              NULL|                NULL|   1.374868859375E7|        NULL|          NULL|                NULL|      NULL|          NULL|    NULL|        NULL|30.053724845781286|30.855851874453027|          3.81625|         3.0115625|      258.00109375|     NULL|           NULL|         NULL|      NULL|       NULL|       NULL|               NULL|              NULL|        NULL|       NULL|        14.458125|        NULL|                NULL|      NULL|NULL|                NULL|                NULL|          NULL|    NULL|        NULL|                NULL|          NULL|                NULL|     NULL|                NULL|            NULL|2.010058053446940...|2.010058053446940...|2.010058053446940...|            NULL|                NULL|
+| stddev|          NULL|3695.1860575619903|       NULL|        NULL|                NULL|         NULL|         NULL|              NULL|                NULL|1.546206441952931E7|        NULL|          NULL|                NULL|      NULL|          NULL|    NULL|        NULL|0.8931358947549937|1.3377753811193456|3.080220514610349|2.1740481975518686|146.62994618836777|     NULL|           NULL|         NULL|      NULL|       NULL|       NULL|               NULL|              NULL|        NULL|       NULL|5.781793786178258|        NULL|                NULL|      NULL|NULL|                NULL|                NULL|          NULL|    NULL|        NULL|                NULL|          NULL|                NULL|     NULL|                NULL|            NULL|  3357745.2127027223|  3357745.2127027223|  3357745.2127027223|            NULL|                NULL|
+|    min|PF-EGY-1000000|           1000000| Commercial|         buy|https://www.prope...|    Apartment|           RR|          off_plan|Apartment for Ren...|            10000.0|     monthly|           EGP|Allegria, Distric...|Alexandria|6th of October|   Degla|    Allegria|         27.370078|         27.830027|                0|                 1|               100|      sqm|fully_furnished|     featured|     False|      False|      False|              False|             False|       False| 2021-01-01|               10|       False|https://www.youtu...|REF-100013|NULL|Spacious Apartmen...|Balcony, Security...|          Cash|  AG-101| Mohamed Ali| m.ali@realestate.eg|         False|              Arabic|   BRK-50|Coldwell Banker E...|contact@remax.eg|       +201001112233|       +201001112233|       +201001112233|contact@remax.eg|2025-12-31T00:00:12Z|
+|    25%|          NULL|         1003198.0|       NULL|        NULL|                NULL|         NULL|         NULL|              NULL|                NULL|          3406000.0|        NULL|          NULL|                NULL|      NULL|          NULL|    NULL|        NULL|         29.963109|         30.837713|              1.0|               1.0|             149.0|     NULL|           NULL|         NULL|      NULL|       NULL|       NULL|               NULL|              NULL|        NULL|       NULL|              9.0|        NULL|                NULL|      NULL|NULL|                NULL|                NULL|          NULL|    NULL|        NULL|                NULL|          NULL|                NULL|     NULL|                NULL|            NULL|    2.01001112233E11|    2.01001112233E11|    2.01001112233E11|            NULL|                NULL|
+|    50%|          NULL|         1006398.0|       NULL|        NULL|                NULL|         NULL|         NULL|              NULL|                NULL|          8790000.0|        NULL|          NULL|                NULL|      NULL|          NULL|    NULL|        NULL|         30.043909|         30.976669|              3.0|               2.0|             223.0|     NULL|           NULL|         NULL|      NULL|       NULL|       NULL|               NULL|              NULL|        NULL|       NULL|             14.0|        NULL|                NULL|      NULL|NULL|                NULL|                NULL|          NULL|    NULL|        NULL|                NULL|          NULL|                NULL|     NULL|                NULL|            NULL|    2.01004445566E11|    2.01004445566E11|    2.01004445566E11|            NULL|                NULL|
+|    75%|          NULL|         1009598.0|       NULL|        NULL|                NULL|         NULL|         NULL|              NULL|                NULL|           1.8261E7|        NULL|          NULL|                NULL|      NULL|          NULL|    NULL|        NULL|         30.080649|          31.48012|              5.0|               4.0|             308.0|     NULL|           NULL|         NULL|      NULL|       NULL|       NULL|               NULL|              NULL|        NULL|       NULL|             19.0|        NULL|                NULL|      NULL|NULL|                NULL|                NULL|          NULL|    NULL|        NULL|                NULL|          NULL|                NULL|     NULL|                NULL|            NULL|    2.01007778899E11|    2.01007778899E11|    2.01007778899E11|            NULL|                NULL|
+|    max|PF-EGY-1012799|           1012799|Residential|        rent|https://www.prope...|    Warehouse|           RS|under_construction|Warehouse for Sal...|          9999000.0|    one_time|           EGP|Tiba Gardens, Zon...|   Red Sea|        Smouha|  Zone 8|Tiba Gardens|         31.229895|         33.689941|                9|                 9|                99|      sqm|    unfurnished|     standard|      True|       True|       True|               True|              True|        True| 2025-12-30|                9|        True|https://www.youtu...|REF-999998|NULL|Spacious Warehous...|Security, Concier...|  Installments|  AG-104|Sarah Hassan|s.hassan@realesta...|          True|Arabic, English, ...|   BRK-53|        RE/MAX Egypt|support@nawy.com|       +201009990000|       +201009990000|       +201009990000|support@nawy.com|2025-12-31T23:59:58Z|
++-------+--------------+------------------+-----------+------------+--------------------+-------------+-------------+------------------+--------------------+-------------------+------------+--------------+--------------------+----------+--------------+--------+------------+------------------+------------------+-----------------+------------------+------------------+---------+---------------+-------------+----------+-----------+-----------+-------------------+------------------+------------+-----------+-----------------+------------+--------------------+----------+----+--------------------+--------------------+--------------+--------+------------+--------------------+--------------+--------------------+---------+--------------------+----------------+--------------------+--------------------+--------------------+----------------+--------------------+
 
 
 ============================================================
@@ -562,7 +562,7 @@ root
 ============================================================
  Comprehensive Profiling for Table: bronze.raw_usd_egp_monthly 
 ============================================================
-Total Rows: 22
+Total Rows: 70
 Total Columns: 2
 Duplicate Rows: 0 (0.00% of data)
 
@@ -580,21 +580,21 @@ root
 
 --- Distinct Values Count ---
 -RECORD 0---------
- year_month | 22  
- usd_egp    | 22  
+ year_month | 70  
+ usd_egp    | 70  
 
 
 --- Comprehensive Summary Statistics ---
 +-------+----------+------------------+
 |summary|year_month|           usd_egp|
 +-------+----------+------------------+
-|  count|        22|                22|
-|   mean|      NULL| 49.94810454545455|
-| stddev|      NULL|1.8464374896843065|
-|    min|   2025-01|           47.1717|
-|    25%|      NULL|           48.2572|
-|    50%|      NULL|            50.276|
-|    75%|      NULL|           50.9837|
+|  count|        70|                70|
+|   mean|      NULL|34.673161428571426|
+| stddev|      NULL|14.537063362947341|
+|    min|   2021-01|            15.639|
+|    25%|      NULL|           18.6935|
+|    50%|      NULL|            30.871|
+|    75%|      NULL|            48.903|
 |    max|   2026-10|           52.9959|
 +-------+----------+------------------+
 
@@ -602,7 +602,7 @@ root
 ============================================================
  Comprehensive Profiling for Table: bronze.stg_listings 
 ============================================================
-Total Rows: 180
+Total Rows: 200
 Total Columns: 54
 Duplicate Rows: 0 (0.00% of data)
 
@@ -615,7 +615,7 @@ root
  |-- detail_url: string (nullable = true)
  |-- property_type: string (nullable = true)
  |-- offering_type: string (nullable = true)
- |-- completion_status: string (nullable = true)
+ |-- completion_stats: string (nullable = true)
  |-- title: string (nullable = true)
  |-- price_egp: string (nullable = true)
  |-- price_period: string (nullable = true)
@@ -673,9 +673,9 @@ root
  detail_url          | 0   
  property_type       | 0   
  offering_type       | 0   
- completion_status   | 0   
+ completion_stats    | 0   
  title               | 0   
- price_egp           | 10  
+ price_egp           | 0   
  price_period        | 0   
  price_currency      | 0   
  location_full       | 0   
@@ -685,9 +685,9 @@ root
  subdistrict         | 0   
  lat                 | 0   
  lon                 | 0   
- bedrooms            | 7   
+ bedrooms            | 0   
  bathrooms           | 0   
- area_value          | 4   
+ area_value          | 0   
  area_unit           | 0   
  furnished           | 0   
  listing_level       | 0   
@@ -700,15 +700,15 @@ root
  listed_date         | 0   
  images_count        | 0   
  has_view_360        | 0   
- video_url           | 135 
+ video_url           | 150 
  reference           | 0   
- rera                | 180 
+ rera                | 200 
  description         | 0   
  amenities           | 0   
  payment_method      | 0   
  agent_id            | 0   
  agent_name          | 0   
- agent_email         | 6   
+ agent_email         | 0   
  agent_is_super      | 0   
  agent_languages     | 0   
  broker_id           | 0   
@@ -724,28 +724,28 @@ root
 
 --- Distinct Values Count ---
 -RECORD 0------------------
- listing_id          | 180 
- internal_id         | 180 
+ listing_id          | 200 
+ internal_id         | 200 
  category            | 2   
  listing_type        | 2   
- detail_url          | 180 
+ detail_url          | 200 
  property_type       | 11  
  offering_type       | 2   
- completion_status   | 3   
- title               | 98  
- price_egp           | 170 
+ completion_stats    | 3   
+ title               | 105 
+ price_egp           | 198 
  price_period        | 2   
  price_currency      | 1   
  location_full       | 13  
- city                | 9   
+ city                | 5   
  town                | 8   
  district            | 12  
  subdistrict         | 13  
- lat                 | 180 
- lon                 | 180 
+ lat                 | 200 
+ lon                 | 200 
  bedrooms            | 13  
  bathrooms           | 9   
- area_value          | 176 
+ area_value          | 156 
  area_unit           | 1   
  furnished           | 3   
  listing_level       | 3   
@@ -755,13 +755,13 @@ root
  is_new_construction | 2   
  is_direct_from_dev  | 2   
  is_exclusive        | 2   
- listed_date         | 163 
+ listed_date         | 191 
  images_count        | 20  
  has_view_360        | 2   
  video_url           | 1   
- reference           | 180 
+ reference           | 200 
  rera                | 0   
- description         | 78  
+ description         | 79  
  amenities           | 4   
  payment_method      | 3   
  agent_id            | 4   
@@ -776,21 +776,21 @@ root
  contact_phone       | 4   
  contact_whatsapp    | 4   
  contact_email       | 4   
- scraped_at          | 180 
+ scraped_at          | 200 
  _ingested_at        | 1   
 
 
 --- Comprehensive Summary Statistics ---
-+-------+--------------+-----------------+-----------+------------+--------------------+-------------+-------------+------------------+--------------------+--------------------+------------+--------------+--------------------+----------+--------------+--------+------------+------------------+------------------+------------------+-----------------+------------------+---------+---------------+-------------+----------+-----------+-----------+-------------------+------------------+------------+-----------+-----------------+------------+--------------------+----------+----+--------------------+--------------------+--------------+--------+------------+--------------------+--------------+--------------------+---------+--------------------+----------------+--------------------+--------------------+--------------------+----------------+--------------------+
-|summary|    listing_id|      internal_id|   category|listing_type|          detail_url|property_type|offering_type| completion_status|               title|           price_egp|price_period|price_currency|       location_full|      city|          town|district| subdistrict|               lat|               lon|          bedrooms|        bathrooms|        area_value|area_unit|      furnished|listing_level|is_premium|is_verified|is_featured|is_new_construction|is_direct_from_dev|is_exclusive|listed_date|     images_count|has_view_360|           video_url| reference|rera|         description|           amenities|payment_method|agent_id|  agent_name|         agent_email|agent_is_super|     agent_languages|broker_id|         broker_name|    broker_email|        broker_phone|       contact_phone|    contact_whatsapp|   contact_email|          scraped_at|
-+-------+--------------+-----------------+-----------+------------+--------------------+-------------+-------------+------------------+--------------------+--------------------+------------+--------------+--------------------+----------+--------------+--------+------------+------------------+------------------+------------------+-----------------+------------------+---------+---------------+-------------+----------+-----------+-----------+-------------------+------------------+------------+-----------+-----------------+------------+--------------------+----------+----+--------------------+--------------------+--------------+--------+------------+--------------------+--------------+--------------------+---------+--------------------+----------------+--------------------+--------------------+--------------------+----------------+--------------------+
-|  count|           180|              180|        180|         180|                 180|          180|          180|               180|                 180|                 170|         180|           180|                 180|       180|           180|     180|         180|               180|               180|               173|              180|               176|      180|            180|          180|       180|        180|        180|                180|               180|         180|        180|              180|         180|                  45|       180|   0|                 180|                 180|           180|     180|         180|                 174|           180|                 180|      180|                 180|             180|                 180|                 180|                 180|             180|                 180|
-|   mean|          NULL|        1190509.5|       NULL|        NULL|                NULL|         NULL|         NULL|              NULL|                NULL|1.0345145294117646E7|        NULL|          NULL|                NULL|      NULL|          NULL|    NULL|        NULL|29.753024794444457|31.231871050000002|3.7514450867052025|             2.95| 246.1754317736416|     NULL|           NULL|         NULL|      NULL|       NULL|       NULL|               NULL|              NULL|        NULL|       NULL|14.86111111111111|        NULL|                NULL|      NULL|NULL|                NULL|                NULL|          NULL|    NULL|        NULL|                NULL|          NULL|                NULL|     NULL|                NULL|            NULL|2.010060414274555...|2.010060414274555...|2.010060414274555...|            NULL|                NULL|
-| stddev|          NULL|52.10566188045211|       NULL|        NULL|                NULL|         NULL|         NULL|              NULL|                NULL|1.2066154247447802E7|        NULL|          NULL|                NULL|      NULL|          NULL|    NULL|        NULL|1.1089976118213054|1.4231663509001973|2.9157871595931684|2.033998731068638|142.74758511016535|     NULL|           NULL|         NULL|      NULL|       NULL|       NULL|               NULL|              NULL|        NULL|       NULL|5.801910578102737|        NULL|                NULL|      NULL|NULL|                NULL|                NULL|          NULL|    NULL|        NULL|                NULL|          NULL|                NULL|     NULL|                NULL|            NULL|  3236734.5117553356|  3236734.5117553356|  3236734.5117553356|            NULL|                NULL|
-|    min|PF-EGY-1190420|          1190420| Commercial|         buy|https://www.prope...|    Apartment|           RR|          off_plan|Apartment for Ren...|         -26206000.0|     monthly|           EGP|Allegria, Distric...|Alexandria|6th of October|   Degla|    Allegria|         27.370412|         27.830313|               0.0|              1.0|               0.0|      sqm|fully_furnished|     featured|     False|      False|      False|              False|             False|       False| 02/12/2023|               10|       False|https://www.youtu...|REF-101279|NULL|Spacious Apartmen...|Balcony, Security...|          Cash|  AG-101| Mohamed Ali| m.ali@realestate.eg|         False|              Arabic|   BRK-50|Coldwell Banker E...|contact@remax.eg|       +201001112233|       +201001112233|       +201001112233|contact@remax.eg|2021-01-17T02:45:53Z|
-|    25%|          NULL|        1190464.0|       NULL|        NULL|                NULL|         NULL|         NULL|              NULL|                NULL|           3103000.0|        NULL|          NULL|                NULL|      NULL|          NULL|    NULL|        NULL|         29.946818|         30.902674|               1.0|              1.0|137.33669846300143|     NULL|           NULL|         NULL|      NULL|       NULL|       NULL|               NULL|              NULL|        NULL|       NULL|             10.0|        NULL|                NULL|      NULL|NULL|                NULL|                NULL|          NULL|    NULL|        NULL|                NULL|          NULL|                NULL|     NULL|                NULL|            NULL|    2.01004445566E11|    2.01004445566E11|    2.01004445566E11|            NULL|                NULL|
-|    50%|          NULL|        1190509.0|       NULL|        NULL|                NULL|         NULL|         NULL|              NULL|                NULL|           9122000.0|        NULL|          NULL|                NULL|      NULL|          NULL|    NULL|        NULL|         30.030512|         31.279431|               3.0|              2.0|218.74293212577237|     NULL|           NULL|         NULL|      NULL|       NULL|       NULL|               NULL|              NULL|        NULL|       NULL|             15.0|        NULL|                NULL|      NULL|NULL|                NULL|                NULL|          NULL|    NULL|        NULL|                NULL|          NULL|                NULL|     NULL|                NULL|            NULL|    2.01007778899E11|    2.01007778899E11|    2.01007778899E11|            NULL|                NULL|
-|    75%|          NULL|        1190554.0|       NULL|        NULL|                NULL|         NULL|         NULL|              NULL|                NULL|            1.5753E7|        NULL|          NULL|                NULL|      NULL|          NULL|    NULL|        NULL|         30.062595|          31.49507|               5.0|              4.0| 290.7760707467708|     NULL|           NULL|         NULL|      NULL|       NULL|       NULL|               NULL|              NULL|        NULL|       NULL|             20.0|        NULL|                NULL|      NULL|NULL|                NULL|                NULL|          NULL|    NULL|        NULL|                NULL|          NULL|                NULL|     NULL|                NULL|            NULL|        2.0100999E11|        2.0100999E11|        2.0100999E11|            NULL|                NULL|
-|    max|PF-EGY-1190599|          1190599|Residential|        rent|https://www.prope...|    Warehouse|           RS|under_construction|Warehouse for Sal...|           9922000.0|    one_time|           EGP|Tiba Gardens, Zon...|      giza|        Smouha|  Zone 8|Tiba Gardens|         31.221256|         33.689056|               9.0|              9.0| 97.39764774731708|      sqm|    unfurnished|     standard|      True|       True|       True|               True|              True|        True| 27/08/2022|                9|        True|https://www.youtu...|REF-998681|NULL|Spacious Warehous...|Security, Concier...|  Installments|  AG-104|Sarah Hassan|s.hassan@realesta...|          True|Arabic, English, ...|   BRK-53|        RE/MAX Egypt|support@nawy.com|       +201009990000|       +201009990000|       +201009990000|support@nawy.com|2026-01-21T17:04:08Z|
-+-------+--------------+-----------------+-----------+------------+--------------------+-------------+-------------+------------------+--------------------+--------------------+------------+--------------+--------------------+----------+--------------+--------+------------+------------------+------------------+------------------+-----------------+------------------+---------+---------------+-------------+----------+-----------+-----------+-------------------+------------------+------------+-----------+-----------------+------------+--------------------+----------+----+--------------------+--------------------+--------------+--------+------------+--------------------+--------------+--------------------+---------+--------------------+----------------+--------------------+--------------------+--------------------+----------------+--------------------+
++-------+--------------+------------------+-----------+------------+--------------------+-------------+-------------+------------------+--------------------+-------------------+------------+--------------+--------------------+----------+--------------+--------+------------+------------------+------------------+-----------------+------------------+------------------+---------+---------------+-------------+----------+-----------+-----------+-------------------+------------------+------------+-----------+-----------------+------------+--------------------+----------+----+--------------------+--------------------+--------------+--------+------------+--------------------+--------------+--------------------+---------+--------------------+----------------+-------------------+-------------------+-------------------+----------------+--------------------+
+|summary|    listing_id|       internal_id|   category|listing_type|          detail_url|property_type|offering_type|  completion_stats|               title|          price_egp|price_period|price_currency|       location_full|      city|          town|district| subdistrict|               lat|               lon|         bedrooms|         bathrooms|        area_value|area_unit|      furnished|listing_level|is_premium|is_verified|is_featured|is_new_construction|is_direct_from_dev|is_exclusive|listed_date|     images_count|has_view_360|           video_url| reference|rera|         description|           amenities|payment_method|agent_id|  agent_name|         agent_email|agent_is_super|     agent_languages|broker_id|         broker_name|    broker_email|       broker_phone|      contact_phone|   contact_whatsapp|   contact_email|          scraped_at|
++-------+--------------+------------------+-----------+------------+--------------------+-------------+-------------+------------------+--------------------+-------------------+------------+--------------+--------------------+----------+--------------+--------+------------+------------------+------------------+-----------------+------------------+------------------+---------+---------------+-------------+----------+-----------+-----------+-------------------+------------------+------------+-----------+-----------------+------------+--------------------+----------+----+--------------------+--------------------+--------------+--------+------------+--------------------+--------------+--------------------+---------+--------------------+----------------+-------------------+-------------------+-------------------+----------------+--------------------+
+|  count|           200|               200|        200|         200|                 200|          200|          200|               200|                 200|                200|         200|           200|                 200|       200|           200|     200|         200|               200|               200|              200|               200|               200|      200|            200|          200|       200|        200|        200|                200|               200|         200|        200|              200|         200|                  50|       200|   0|                 200|                 200|           200|     200|         200|                 200|           200|                 200|      200|                 200|             200|                200|                200|                200|             200|                 200|
+|   mean|          NULL|         1012699.5|       NULL|        NULL|                NULL|         NULL|         NULL|              NULL|                NULL|       1.53149545E7|        NULL|          NULL|                NULL|      NULL|          NULL|    NULL|        NULL|29.895190770000003| 30.99855793500002|            4.335|              3.39|           279.635|     NULL|           NULL|         NULL|      NULL|       NULL|       NULL|               NULL|              NULL|        NULL|       NULL|           14.345|        NULL|                NULL|      NULL|NULL|                NULL|                NULL|          NULL|    NULL|        NULL|                NULL|          NULL|                NULL|     NULL|                NULL|            NULL|2.01005637452495E11|2.01005637452495E11|2.01005637452495E11|            NULL|                NULL|
+| stddev|          NULL|57.879184513951124|       NULL|        NULL|                NULL|         NULL|         NULL|              NULL|                NULL|1.722040447270322E7|        NULL|          NULL|                NULL|      NULL|          NULL|    NULL|        NULL| 1.088235570903763|1.4961586623465322|3.188039046941572|2.2943890484239238|151.48687448324867|     NULL|           NULL|         NULL|      NULL|       NULL|       NULL|               NULL|              NULL|        NULL|       NULL|6.023069135336672|        NULL|                NULL|      NULL|NULL|                NULL|                NULL|          NULL|    NULL|        NULL|                NULL|          NULL|                NULL|     NULL|                NULL|            NULL| 3347507.5270631434| 3347507.5270631434| 3347507.5270631434|            NULL|                NULL|
+|    min|PF-EGY-1012600|           1012600| Commercial|         buy|https://www.prope...|    Apartment|           RR|          off_plan|Apartment for Ren...|           101400.0|     monthly|           EGP|Allegria, Distric...|Alexandria|6th of October|   Degla|    Allegria|         27.371145|         27.830248|                0|                 1|               101|      sqm|fully_furnished|     featured|     False|      False|      False|              False|             False|       False| 2021-01-02|               10|       False|https://www.youtu...|REF-109667|NULL|Spacious Apartmen...|Balcony, Security...|          Cash|  AG-101| Mohamed Ali| m.ali@realestate.eg|         False|              Arabic|   BRK-50|Coldwell Banker E...|contact@remax.eg|      +201001112233|      +201001112233|      +201001112233|contact@remax.eg|2025-12-31T00:14:15Z|
+|    25%|          NULL|         1012649.0|       NULL|        NULL|                NULL|         NULL|         NULL|              NULL|                NULL|          3829000.0|        NULL|          NULL|                NULL|      NULL|          NULL|    NULL|        NULL|         29.949435|         30.841565|              2.0|               2.0|             166.0|     NULL|           NULL|         NULL|      NULL|       NULL|       NULL|               NULL|              NULL|        NULL|       NULL|              9.0|        NULL|                NULL|      NULL|NULL|                NULL|                NULL|          NULL|    NULL|        NULL|                NULL|          NULL|                NULL|     NULL|                NULL|            NULL|   2.01001112233E11|   2.01001112233E11|   2.01001112233E11|            NULL|                NULL|
+|    50%|          NULL|         1012699.0|       NULL|        NULL|                NULL|         NULL|         NULL|              NULL|                NULL|          9345000.0|        NULL|          NULL|                NULL|      NULL|          NULL|    NULL|        NULL|         30.035281|         30.985936|              4.0|               3.0|             240.0|     NULL|           NULL|         NULL|      NULL|       NULL|       NULL|               NULL|              NULL|        NULL|       NULL|             14.0|        NULL|                NULL|      NULL|NULL|                NULL|                NULL|          NULL|    NULL|        NULL|                NULL|          NULL|                NULL|     NULL|                NULL|            NULL|   2.01004445566E11|   2.01004445566E11|   2.01004445566E11|            NULL|                NULL|
+|    75%|          NULL|         1012749.0|       NULL|        NULL|                NULL|         NULL|         NULL|              NULL|                NULL|           2.0325E7|        NULL|          NULL|                NULL|      NULL|          NULL|    NULL|        NULL|          30.07921|         31.489878|              6.0|               4.0|             370.0|     NULL|           NULL|         NULL|      NULL|       NULL|       NULL|               NULL|              NULL|        NULL|       NULL|             20.0|        NULL|                NULL|      NULL|NULL|                NULL|                NULL|          NULL|    NULL|        NULL|                NULL|          NULL|                NULL|     NULL|                NULL|            NULL|   2.01007778899E11|   2.01007778899E11|   2.01007778899E11|            NULL|                NULL|
+|    max|PF-EGY-1012799|           1012799|Residential|        rent|https://www.prope...|    Warehouse|           RS|under_construction|Warehouse for Sal...|          9884000.0|    one_time|           EGP|Tiba Gardens, Zon...|   Red Sea|        Smouha|  Zone 8|Tiba Gardens|         31.228986|         33.687303|                9|                 9|                94|      sqm|    unfurnished|     standard|      True|       True|       True|               True|              True|        True| 2025-12-28|                9|        True|https://www.youtu...|REF-999515|NULL|Spacious Warehous...|Security, Concier...|  Installments|  AG-104|Sarah Hassan|s.hassan@realesta...|          True|Arabic, English, ...|   BRK-53|        RE/MAX Egypt|support@nawy.com|      +201009990000|      +201009990000|      +201009990000|support@nawy.com|2025-12-31T23:59:34Z|
++-------+--------------+------------------+-----------+------------+--------------------+-------------+-------------+------------------+--------------------+-------------------+------------+--------------+--------------------+----------+--------------+--------+------------+------------------+------------------+-----------------+------------------+------------------+---------+---------------+-------------+----------+-----------+-----------+-------------------+------------------+------------+-----------+-----------------+------------+--------------------+----------+----+--------------------+--------------------+--------------+--------+------------+--------------------+--------------+--------------------+---------+--------------------+----------------+-------------------+-------------------+-------------------+----------------+--------------------+
 

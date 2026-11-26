@@ -14,7 +14,7 @@ db_properties = {
     "driver": "org.postgresql.Driver"
 }
 
-df = spark.read.jdbc(db_url, "bronze.raw_egypt_inflation_monthly_2025_2026", properties=db_properties)
+df = spark.read.jdbc(db_url, "bronze.raw_egypt_inflation_monthly_2021_2026", properties=db_properties)
 initial_count = df.count()
 
 df = df.withColumn("year_month", trim(col("year_month").cast(StringType())))

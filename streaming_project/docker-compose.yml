@@ -79,6 +79,7 @@ services:
       MSGS_PER_SEC: "20"
     volumes:
       - ./:/app
+
   dbt:
     image: ghcr.io/dbt-labs/dbt-postgres:1.8.2
     container_name: dbt
@@ -89,6 +90,36 @@ services:
     volumes:
       - ./dbt_project:/usr/app
       - ./dbt_project/profiles:/root/.dbt
+
+  airflow-db:
+    image: postgres:16
+    container_name: airflow-db
+    environment:
+      POSTGRES_USER: airflow
+      POSTGRES_PASSWORD: airflow
+      POSTGRES_DB: airflow
+    volumes:
+      - airflowdb:/var/lib/postgresql/data
+
+  airflow:
+    build: ./airflow
+    container_name: airflow
+    command: standalone
+    depends_on:
+      - airflow-db
+      - postgres
+    environment:
+      AIRFLOW__CORE__EXECUTOR: LocalExecutor
+      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@airflow-db/airflow
+      AIRFLOW__CORE__LOAD_EXAMPLES: "False"
+    ports:
+      - "8081:8080"
+    volumes:
+      - ./airflow/dags:/opt/airflow/dags
+      - ./:/app
+      - ./dbt_project:/opt/dbt
+
 volumes:
   pgdata:
   kafkadata:
+  airflowdb:
