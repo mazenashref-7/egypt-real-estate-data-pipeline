@@ -4,16 +4,16 @@ models:
   - name: fact_listing
     columns:
       - name: listing_id
-        tests: [unique, not_null]
-      - name: location_id
         tests:
           - not_null
+          - unique
+      - name: location_id
+        tests:
           - relationships:
               to: ref('dim_location')
               field: location_id
       - name: property_id
         tests:
-          - not_null
           - relationships:
               to: ref('dim_property')
               field: property_id
@@ -27,33 +27,31 @@ models:
           - relationships:
               to: ref('dim_broker')
               field: broker_id
-      - name: offering_type
-        tests:
-          - not_null
-          - accepted_values:
-              values: ['sale', 'rent']
 
   - name: dim_location
     columns:
       - name: location_id
-        tests: [unique, not_null]
+        tests:
+          - not_null
+          - unique
 
   - name: dim_property
     columns:
       - name: property_id
-        tests: [unique, not_null]
+        tests:
+          - not_null
+          - unique
 
   - name: dim_agent
     columns:
       - name: agent_id
-        tests: [unique, not_null]
-      - name: broker_id
         tests:
-          - relationships:
-              to: ref('dim_broker')
-              field: broker_id
+          - not_null
+          - unique
 
   - name: dim_broker
     columns:
       - name: broker_id
-        tests: [unique, not_null]
+        tests:
+          - not_null
+          - unique

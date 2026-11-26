@@ -1,0 +1,182 @@
+version: 2
+
+semantic_models:
+  - name: listings
+    description: "Listing-level facts, with one row per listing."
+    model: ref('fact_listing')
+    defaults:
+      agg_time_dimension: listed_date
+    entities:
+      - name: listing
+        type: primary
+        expr: listing_id
+      - name: location
+        type: foreign
+        expr: location_id
+      - name: property
+        type: foreign
+        expr: property_id
+      - name: agent
+        type: foreign
+        expr: agent_id
+      - name: broker
+        type: foreign
+        expr: broker_id
+    dimensions:
+      - name: listed_date
+        type: time
+        expr: listed_date
+        type_params:
+          time_granularity: day
+      - name: year_month
+        type: categorical
+        expr: year_month
+      - name: offering_type
+        type: categorical
+        expr: offering_type
+      - name: price_period
+        type: categorical
+        expr: price_period
+      - name: area_unit
+        type: categorical
+        expr: area_unit
+      - name: bedrooms
+        type: categorical
+        expr: bedrooms
+      - name: bathrooms
+        type: categorical
+        expr: bathrooms
+    measures:
+      - name: listing_count
+        description: "Distinct count of listings."
+        agg: count_distinct
+        expr: listing_id
+      - name: total_listing_price_egp
+        description: "Sum of listed prices in EGP; use with offering_type and price_period."
+        agg: sum
+        expr: price_egp
+      - name: average_listing_price_egp
+        description: "Average listed price in EGP; use with offering_type and price_period."
+        agg: average
+        expr: price_egp
+      - name: average_listing_price_usd
+        description: "Average listed price converted to USD using the listing month's exchange rate."
+        agg: average
+        expr: price_usd
+      - name: average_sale_price_per_area_unit_egp
+        description: "Average sale price per area unit, populated for recognized sales with positive area."
+        agg: average
+        expr: sale_price_per_sqm_egp
+      - name: average_monthly_rent_per_area_unit_egp
+        description: "Average monthly rent per area unit, populated for recognized monthly rentals with positive area."
+        agg: average
+        expr: monthly_rent_per_sqm_egp
+
+  - name: locations
+    description: "Location attributes used to group listing metrics."
+    model: ref('dim_location')
+    entities:
+      - name: location
+        type: primary
+        expr: location_id
+    dimensions:
+      - name: city
+        type: categorical
+        expr: city
+      - name: town
+        type: categorical
+        expr: town
+      - name: district
+        type: categorical
+        expr: district
+      - name: subdistrict
+        type: categorical
+        expr: subdistrict
+
+  - name: properties
+    description: "Property attributes used to group listing metrics."
+    model: ref('dim_property')
+    entities:
+      - name: property
+        type: primary
+        expr: property_id
+    dimensions:
+      - name: category
+        type: categorical
+        expr: category
+      - name: property_type
+        type: categorical
+        expr: property_type
+      - name: property_offering_type
+        type: categorical
+        expr: offering_type
+
+  - name: agents
+    description: "Agent and broker relationships for listing analysis."
+    model: ref('dim_agent')
+    entities:
+      - name: agent
+        type: primary
+        expr: agent_id
+      - name: broker
+        type: foreign
+        expr: broker_id
+    dimensions:
+      - name: agent_name
+        type: categorical
+        expr: agent_name
+
+  - name: brokers
+    description: "Broker attributes used to group listing metrics."
+    model: ref('dim_broker')
+    entities:
+      - name: broker
+        type: primary
+        expr: broker_id
+    dimensions:
+      - name: broker_name
+        type: categorical
+        expr: broker_name
+
+metrics:
+  - name: total_listings
+    label: Total Listings
+    description: "Distinct number of listings."
+    type: simple
+    type_params:
+      measure: listing_count
+
+  - name: total_listing_price_egp
+    label: Total Listing Price (EGP)
+    description: "Sum of listed prices in EGP; compare only within compatible offering types and price periods."
+    type: simple
+    type_params:
+      measure: total_listing_price_egp
+
+  - name: average_listing_price_egp
+    label: Average Listing Price (EGP)
+    description: "Average listed price in EGP; compare only within compatible offering types and price periods."
+    type: simple
+    type_params:
+      measure: average_listing_price_egp
+
+  - name: average_listing_price_usd
+    label: Average Listing Price (USD)
+    description: "Average listed price converted to USD."
+    type: simple
+    type_params:
+      measure: average_listing_price_usd
+
+  - name: average_sale_price_per_area_unit_egp
+    label: Average Sale Price per Area Unit (EGP)
+    description: "Average sale price per area unit."
+    type: simple
+    type_params:
+      measure: average_sale_price_per_area_unit_egp
+
+  - name: average_monthly_rent_per_area_unit_egp
+    label: Average Monthly Rent per Area Unit (EGP)
+    description: "Average monthly rent per area unit."
+    type: simple
+    type_params:
+      measure: average_monthly_rent_per_area_unit_egp

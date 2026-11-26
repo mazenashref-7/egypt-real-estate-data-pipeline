@@ -81,7 +81,8 @@ services:
       - ./:/app
 
   dbt:
-    image: ghcr.io/dbt-labs/dbt-postgres:1.8.2
+    build:
+      context: ./dbt
     container_name: dbt
     working_dir: /usr/app
     entrypoint: ["sleep", "infinity"]
