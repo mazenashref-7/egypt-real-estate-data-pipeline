@@ -16,7 +16,7 @@ db_properties = {
 }
 
 tables = [
-    "bronze.raw_egypt_inflation_monthly_2025_2026",
+    "bronze.raw_egypt_inflation_monthly_2021_2026",
     "bronze.raw_egypt_locations",
     "bronze.raw_egypt_real_estate_listings",
     "bronze.raw_listings_stream",

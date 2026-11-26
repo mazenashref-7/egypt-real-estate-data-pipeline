@@ -11,7 +11,7 @@ from airflow.operators.python import PythonOperator
 PROJECT_DIR = Path("/app")
 SPARK_OPTIONS = (
     "--master 'local[2]' "
-    "--driver-memory 1g "
+    "--driver-memory 3g "
     "--conf spark.sql.shuffle.partitions=8 "
     "--conf spark.jars.ivy=/tmp/ivy "
     "--packages org.postgresql:postgresql:42.7.3"
@@ -27,7 +27,14 @@ CLEANERS = [
 ]
 
 DBT = "/home/airflow/dbt_venv/bin/dbt"
-DBT_ARGS = "--project-dir /opt/dbt --profiles-dir /opt/dbt/profiles"
+DBT_ARGS = (
+    "--project-dir /opt/dbt "
+    "--profiles-dir /opt/dbt/profiles "
+    "--target-path /tmp/dbt_target "
+    "--log-path /tmp/dbt_logs"
+)
+
+
 def spark_submit(script_name):
     script_path = PROJECT_DIR / "silver_cleaners" / script_name
     return (
@@ -80,7 +87,15 @@ with DAG(
     max_active_runs=1,
     tags=["real-estate", "silver", "spark"],
 ) as dag:
-    previous_task = None
+    load_bronze = BashOperator(
+        task_id="load_bronze",
+        bash_command=(
+            "set -euo pipefail\n"
+            "python /app/Scripts/load_to_bronze.py"
+        ),
+        execution_timeout=timedelta(hours=2),
+    )
+    previous_task = load_bronze
 
     for cleaner in CLEANERS:
         task = BashOperator(

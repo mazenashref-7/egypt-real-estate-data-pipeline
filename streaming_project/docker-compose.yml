@@ -107,20 +107,30 @@ services:
     container_name: airflow
     command: standalone
     depends_on:
-      - airflow-db
       - postgres
     environment:
-      AIRFLOW__CORE__EXECUTOR: LocalExecutor
-      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@airflow-db/airflow
+      PG_HOST: postgres
+      PG_PORT: 5432
+      PG_DB: realestate
+      PG_USER: postgres
+      PG_PASSWORD: postgres
+      AIRFLOW__CORE__EXECUTOR: SequentialExecutor
+      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: sqlite:////opt/airflow/metadata/airflow.db
       AIRFLOW__CORE__LOAD_EXAMPLES: "False"
     ports:
       - "8081:8080"
     volumes:
       - ./airflow/dags:/opt/airflow/dags
       - ./:/app
+      - ../Scripts:/app/Scripts:ro
+      - ../data/raw:/app/data/raw:ro
       - ./dbt_project:/opt/dbt
+      - airflow_metadata:/opt/airflow/metadata
+      - airflow_logs:/opt/airflow/logs
 
 volumes:
   pgdata:
   kafkadata:
   airflowdb:
+  airflow_metadata:
+  airflow_logs:

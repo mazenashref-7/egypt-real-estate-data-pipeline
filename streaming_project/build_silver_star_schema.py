@@ -35,7 +35,14 @@ def n(c):
 
 df = read("silver.propertyfinder_listings", "propertyfinder") \
     .unionByName(read("silver.listings_stream", "listings_stream"), allowMissingColumns=True)
-df = df.withColumn("completion_status", coalesce(col("completion_status"), col("completion_stats"))).drop("completion_stats")
+if "completion_stats" in df.columns:
+    if "completion_status" in df.columns:
+        df = df.withColumn(
+            "completion_status",
+            coalesce(col("completion_status"), col("completion_stats")),
+        ).drop("completion_stats")
+    else:
+        df = df.withColumnRenamed("completion_stats", "completion_status")
 for c in ["agent_id", "broker_id"]:
     df = df.withColumn(c, regexp_replace(col(c).cast("string"), r"\.0$", ""))
 
