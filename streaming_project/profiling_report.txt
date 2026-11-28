@@ -1,0 +1,170 @@
+
+============================================================
+ Comprehensive Profiling for Table: bronze.raw_egypt_inflation_monthly_2021_2026 
+============================================================
+Total Rows: 69
+Total Columns: 5
+Duplicate Rows: 0 (0.00% of data)
+
+--- Schema ---
+root
+ |-- year_month: string (nullable = true)
+ |-- urban_annual_pct: double (nullable = true)
+ |-- urban_mom_pct: double (nullable = true)
+ |-- national_annual_pct: double (nullable = true)
+ |-- core_annual_pct: double (nullable = true)
+
+
+--- Missing Values (Nulls / NaNs) ---
+-RECORD 0------------------
+ year_month          | 0   
+ urban_annual_pct    | 0   
+ urban_mom_pct       | 8   
+ national_annual_pct | 0   
+ core_annual_pct     | 0   
+
+
+--- Distinct Values Count ---
+-RECORD 0------------------
+ year_month          | 69  
+ urban_annual_pct    | 59  
+ urban_mom_pct       | 34  
+ national_annual_pct | 58  
+ core_annual_pct     | 64  
+
+
+--- Comprehensive Summary Statistics ---
++-------+----------+------------------+------------------+-------------------+------------------+
+|summary|year_month|  urban_annual_pct|     urban_mom_pct|national_annual_pct|   core_annual_pct|
++-------+----------+------------------+------------------+-------------------+------------------+
+|  count|        69|                69|                61|                 69|                69|
+|   mean|      NULL|18.455072463768126|1.5754098360655735| 18.540579710144925| 18.70144927536232|
+| stddev|      NULL|  10.3871319745364| 1.756099440778238|  10.80419742562747|11.921193346720335|
+|    min|   2021-01|               4.1|              -0.7|                4.4|               3.3|
+|    25%|      NULL|              12.0|               0.7|               10.3|              10.4|
+|    50%|      NULL|              14.6|               1.4|               14.6|              14.3|
+|    75%|      NULL|              26.5|               2.0|               26.5|              26.6|
+|    max|   2026-09|              38.0|              11.4|               40.3|              41.0|
++-------+----------+------------------+------------------+-------------------+------------------+
+
+
+============================================================
+ Comprehensive Profiling for Table: bronze.raw_egypt_locations 
+============================================================
+Total Rows: 151
+Total Columns: 7
+Duplicate Rows: 0 (0.00% of data)
+
+--- Schema ---
+root
+ |-- city_id: long (nullable = true)
+ |-- city_ar: string (nullable = true)
+ |-- city_en: string (nullable = true)
+ |-- governorate_code: string (nullable = true)
+ |-- governorate_id: long (nullable = true)
+ |-- governorate_ar: string (nullable = true)
+ |-- governorate_en: string (nullable = true)
+
+
+--- Missing Values (Nulls / NaNs) ---
+-RECORD 0---------------
+ city_id          | 0   
+ city_ar          | 0   
+ city_en          | 0   
+ governorate_code | 0   
+ governorate_id   | 0   
+ governorate_ar   | 0   
+ governorate_en   | 0   
+
+
+--- Distinct Values Count ---
+-RECORD 0---------------
+ city_id          | 151 
+ city_ar          | 151 
+ city_en          | 151 
+ governorate_code | 27  
+ governorate_id   | 27  
+ governorate_ar   | 27  
+ governorate_en   | 27  
+
+
+--- Comprehensive Summary Statistics ---
++-------+------------------+--------------+---------------+----------------+-----------------+--------------+--------------+
+|summary|           city_id|       city_ar|        city_en|governorate_code|   governorate_id|governorate_ar|governorate_en|
++-------+------------------+--------------+---------------+----------------+-----------------+--------------+--------------+
+|  count|               151|           151|            151|             151|              151|           151|           151|
+|   mean|              76.0|          NULL|           NULL|            NULL|12.33774834437086|          NULL|          NULL|
+| stddev|43.734044709661454|          NULL|           NULL|            NULL|8.414184386870025|          NULL|          NULL|
+|    min|                 1|       15 مايو|10th of Ramadan|             ALX|                1|         أسوان|    Alexandria|
+|    25%|                38|          NULL|           NULL|            NULL|                5|          NULL|          NULL|
+|    50%|                76|          NULL|           NULL|            NULL|               11|          NULL|          NULL|
+|    75%|               114|          NULL|           NULL|            NULL|               20|          NULL|          NULL|
+|    max|               151|وسط الإسكندرية|          Zefta|             WAD|               27|         مطروح|          Suez|
++-------+------------------+--------------+---------------+----------------+-----------------+--------------+--------------+
+
+
+============================================================
+ Comprehensive Profiling for Table: bronze.raw_egypt_real_estate_listings 
+============================================================
+Total Rows: 19924
+Total Columns: 11
+Duplicate Rows: 0 (0.00% of data)
+
+--- Schema ---
+root
+ |--     url: string (nullable = true)
+ |-- price: string (nullable = true)
+ |-- description: string (nullable = true)
+ |-- location: string (nullable = true)
+ |-- type: string (nullable = true)
+ |-- size: string (nullable = true)
+ |-- bedrooms: string (nullable = true)
+ |-- bathrooms: string (nullable = true)
+ |-- available_from: string (nullable = true)
+ |-- payment_method: string (nullable = true)
+ |-- down_payment: string (nullable = true)
+
+
+--- Missing Values (Nulls / NaNs) ---
+-RECORD 0---------------
+     url        | 0     
+ price          | 539   
+ description    | 78    
+ location       | 91    
+ type           | 77    
+ size           | 77    
+ bedrooms       | 144   
+ bathrooms      | 140   
+ available_from | 663   
+ payment_method | 541   
+ down_payment   | 14479 
+
+
+--- Distinct Values Count ---
+-RECORD 0---------------
+     url        | 19924 
+ price          | 4286  
+ description    | 18130 
+ location       | 1535  
+ type           | 17    
+ size           | 683   
+ bedrooms       | 18    
+ bathrooms      | 16    
+ available_from | 353   
+ payment_method | 2     
+ down_payment   | 2030  
+
+
+--- Comprehensive Summary Statistics ---
++-------+--------------------+---------+--------------------+--------------------+---------+-------------------+------------------+-----------------+--------------+--------------+------------+
+|summary|                 url|    price|         description|            location|     type|               size|          bedrooms|        bathrooms|available_from|payment_method|down_payment|
++-------+--------------------+---------+--------------------+--------------------+---------+-------------------+------------------+-----------------+--------------+--------------+------------+
+|  count|               19924|    19385|               19846|               19833|    19847|              19847|             19780|            19784|         19261|         19383|        5445|
+|   mean|                NULL|     NULL|       1.285381541E9|                NULL|     NULL|               NULL|2.7865035516969217| 2.92013251783894|          NULL|          NULL|        NULL|
+| stddev|                NULL|     NULL|                NULL|                NULL|     NULL|               NULL|0.9518239280052054|1.243031396681073|          NULL|          NULL|        NULL|
+|    min|https://www.prope...|1,000,000|"\n2BR Apartment ...|10th District, Sh...|Apartment|1,001 sqft / 93 sqm|                 1|                1|    1 Apr 2026|          Cash|       1 EGP|
+|    25%|                NULL|     NULL|       1.285381541E9|                NULL|     NULL|               NULL|               2.0|              2.0|          NULL|          NULL|        NULL|
+|    50%|                NULL|     NULL|       1.285381541E9|                NULL|     NULL|               NULL|               3.0|              3.0|          NULL|          NULL|        NULL|
+|    75%|                NULL|     NULL|       1.285381541E9|                NULL|     NULL|               NULL|               3.0|              4.0|          NULL|          NULL|        NULL|
+|    max|https://www.prope...|  995,000|⸻\nOwn a Fully Fi...|بوابة النعيم, Riv...|   iVilla|  990 sqft / 92 sqm|      studio+ Maid|             none|    9 May 2025|  Installments| 999,600 EGP|
++-------+--------------------+---------+--------------------+--------------------+---------+-------------------+------------------+-----------------+--------------+--------------+------------+
